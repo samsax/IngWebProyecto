@@ -12,10 +12,10 @@
             <column name="TEXTO" />
         </property>
         <many-to-one name="codigo" class="co.edu.udea.ingweb.solicitud.dto.Solicitud" fetch="join">
-            <column name="CODIGO" />
+            <column name="SOLICITUD_IDCODIGO" />
         </many-to-one>
-        <many-to-one name="empleado" class="co.edu.udea.ingweb.solicitud.dto.Evaluacion" fetch="join">
-            <column name="EMPLEADO" />
+        <many-to-one name="evaluacion" class="co.edu.udea.ingweb.solicitud.dto.Evaluacion" fetch="join">
+            <column name="EVALUACION_IDEVALUACION" />
         </many-to-one>
     </class>
 </hibernate-mapping>

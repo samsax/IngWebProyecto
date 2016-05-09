@@ -4,7 +4,7 @@ public class Respuesta {
 	int idRespuesta;
 	String texto;
 	Solicitud codigo;
-	Evaluacion empleado;
+	Evaluacion evaluacion;
 	public int getIdRespuesta() {
 		return idRespuesta;
 	}
@@ -23,11 +23,11 @@ public class Respuesta {
 	public void setCodigo(Solicitud codigo) {
 		this.codigo = codigo;
 	}
-	public Evaluacion getEmpleado() {
-		return empleado;
+	public Evaluacion getEvaluacion() {
+		return evaluacion;
 	}
-	public void setEmpleado(Evaluacion empleado) {
-		this.empleado = empleado;
+	public void setEvaluacion(Evaluacion evaluacion) {
+		this.evaluacion = evaluacion;
 	}
 	public Respuesta() {
 	
