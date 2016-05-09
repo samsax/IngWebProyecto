@@ -20,7 +20,7 @@ public interface RespuestaDao {
 	 * 
 	 * @param idrespuesta
 	 *            con la cual se realizará la búsqueda.
-	 * @return Retorna el dispositivo buscado.
+	 * @return Retorna la evaluacion buscada.
 	 * @throws MyException
 	 */
 	public Evaluacion obtenerRespuesta(int idrespuestas) throws MyException;

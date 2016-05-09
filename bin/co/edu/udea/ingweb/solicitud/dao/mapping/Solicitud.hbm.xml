@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/05/2016 09:34:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="co.edu.udea.ingweb.solicitud.dto.Solicitud" table="SOLICITUD">
+        <id name="idcodigo" type="int">
+            <column name="IDCODIGO" />
+            <generator class="assigned" />
+        </id>
+        <property name="tipo" type="java.lang.String">
+            <column name="TIPO" />
+        </property>
+        <property name="texto" type="java.lang.String">
+            <column name="TEXTO" />
+        </property>
+        <property name="estado" type="java.lang.String">
+            <column name="ESTADO" />
+        </property>
+        <property name="dificultad" type="int">
+            <column name="DIFICULTAD" />
+        </property>
+        <property name="fechaCreacion" type="java.util.Date">
+            <column name="FECHACREACION" />
+        </property>
+        <property name="fechaRespuesta" type="java.util.Date">
+            <column name="FECHARESPUESTA" />
+        </property>
+        <many-to-one name="cliente" class="co.edu.udea.ingweb.solicitud.dto.Cliente" fetch="join">
+            <column name="CLIENTE" />
+        </many-to-one>
+        <many-to-one name="empleado" class="co.edu.udea.ingweb.solicitud.dto.Empleado" fetch="join">
+            <column name="EMPLEADO" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

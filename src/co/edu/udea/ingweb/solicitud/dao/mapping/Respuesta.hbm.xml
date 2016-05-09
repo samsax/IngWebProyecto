@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/05/2016 09:34:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="co.edu.udea.ingweb.solicitud.dto.Respuesta" table="RESPUESTA">
+        <id name="idRespuesta" type="int">
+            <column name="IDRESPUESTA" />
+            <generator class="assigned" />
+        </id>
+        <property name="texto" type="java.lang.String">
+            <column name="TEXTO" />
+        </property>
+        <many-to-one name="codigo" class="co.edu.udea.ingweb.solicitud.dto.Solicitud" fetch="join">
+            <column name="CODIGO" />
+        </many-to-one>
+        <many-to-one name="empleado" class="co.edu.udea.ingweb.solicitud.dto.Evaluacion" fetch="join">
+            <column name="EMPLEADO" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

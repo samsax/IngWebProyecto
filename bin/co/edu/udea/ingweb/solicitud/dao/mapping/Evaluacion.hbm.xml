@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/05/2016 09:34:09 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="co.edu.udea.ingweb.solicitud.dto.Evaluacion" table="EVALUACION">
+        <id name="idEvaluacion" type="int">
+            <column name="IDEVALUACION" />
+            <generator class="assigned" />
+        </id>
+        <property name="tiempo" type="java.lang.String">
+            <column name="TIEMPO" />
+        </property>
+        <property name="conformidad" type="java.lang.String">
+            <column name="CONFORMIDAD" />
+        </property>
+        <property name="atencion" type="java.lang.String">
+            <column name="ATENCION" />
+        </property>
+    </class>
+</hibernate-mapping>
