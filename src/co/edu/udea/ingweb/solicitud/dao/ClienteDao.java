@@ -43,7 +43,8 @@ public interface ClienteDao {
 	/**
 	 * Firma del metodo para modificar un cliente existente.
 	 * @param cliente que se desea modificar.
+	 * @return 
 	 * @throws MyException
 	 */
-	public void modificarCliente(Cliente cliente) throws MyException;
+	public Cliente modificarCliente(Cliente cliente) throws MyException;
 }

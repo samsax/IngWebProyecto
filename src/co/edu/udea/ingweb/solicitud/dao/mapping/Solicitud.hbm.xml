@@ -27,10 +27,10 @@
             <column name="FECHARESPUESTA" />
         </property>
         <many-to-one name="cliente" class="co.edu.udea.ingweb.solicitud.dto.Cliente" fetch="join">
-            <column name="CLIENTE" />
+            <column name="CLIENTE_IDENTIFICACION" />
         </many-to-one>
         <many-to-one name="empleado" class="co.edu.udea.ingweb.solicitud.dto.Empleado" fetch="join">
-            <column name="EMPLEADO" />
+            <column name="EMPLEADO_IDENTIFICACION" />
         </many-to-one>
     </class>
 </hibernate-mapping>
