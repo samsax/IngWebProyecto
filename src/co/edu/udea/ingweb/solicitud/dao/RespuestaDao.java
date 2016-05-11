@@ -23,7 +23,7 @@ public interface RespuestaDao {
 	 * @return Retorna la evaluacion buscada.
 	 * @throws MyException
 	 */
-	public Evaluacion obtenerRespuesta(int idrespuestas) throws MyException;
+	public Respuesta obtenerRespuesta(int idrespuestas) throws MyException;
 
 	/**
 	 * Firma del método que nos permite crear una nueva respuesta.
@@ -46,5 +46,5 @@ public interface RespuestaDao {
 	 * @param respuesta que se desea modificar.
 	 * @throws MyException
 	 */
-	public void modificarEvaluacion(Respuesta respuesta) throws MyException;
+	public void modificarRespuesta(Respuesta respuesta) throws MyException;
 }
