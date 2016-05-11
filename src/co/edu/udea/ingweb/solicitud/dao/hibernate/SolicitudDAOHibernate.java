@@ -13,54 +13,57 @@ import com.sun.media.sound.EmergencySoundbank;
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.EvaluacionDao;
+import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
+import co.edu.udea.ingweb.solicitud.dto.Solicitud;
 import co.edu.udea.ingweb.util.exception.MyException;
 
-public class SolicitudDAOHibernate extends HibernateDaoSupport implements EvaluacionDao {
+public class SolicitudDAOHibernate extends HibernateDaoSupport implements SolicitudDao
+{
 
 	@Override
-	public List<Evaluacion> listarEvaluacion() throws MyException {
-	List<Evaluacion> evaluaciones = new ArrayList<Evaluacion>();
+	public List<Solicitud> listarSolicitudes() throws MyException {
+	List<Solicitud> solicitudes = new ArrayList<Solicitud>();
 		
 		try{
 			Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 			
-			Criteria criteria = session.createCriteria(Evaluacion.class);
+			Criteria criteria = session.createCriteria(Solicitud.class);
 			
-			evaluaciones = criteria.list();
+			solicitudes = criteria.list();
 		}catch(HibernateException e){
 			throw new MyException(e);
 		}
-		return evaluaciones;
+		return solicitudes;
 	}
 
 	@Override
-	public Evaluacion obtenerEvaluacion(int identificacion) throws MyException{
-		Evaluacion evaluacion = null;
+	public Solicitud obtenerSolicitud(int identificacion) throws MyException{
+		Solicitud solicitud = null;
 		Session session = null;
 		try{
 			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 			
-			evaluacion = (Evaluacion)session.get(Evaluacion.class, identificacion);
+			solicitud = (Solicitud)session.get(Solicitud.class, identificacion);
 			
 		}catch(HibernateException e){
 			throw new MyException(e);
 			
 	}
 	
-	return evaluacion;
+	return solicitud;
 
 	}
 
 
 	@Override
-	public void crearEvaluacion(Evaluacion evaluacion) throws MyException {
+	public void crearSolicitud(Solicitud solicitud) throws MyException {
 		Session session = null;
 		try{
 			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
-			session.save(evaluacion);
+			session.save(solicitud);
 		}catch(HibernateException e){
 			throw new MyException(e);
 		}
@@ -68,12 +71,12 @@ public class SolicitudDAOHibernate extends HibernateDaoSupport implements Evalua
 	}
 
 	@Override
-	public void eliminarEvaluacion(Evaluacion evaluacion) throws MyException {
+	public void eliminarSolicitud(Solicitud solicitud) throws MyException {
 		Session session = null;
 		try{
 			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 			
-			session.delete(evaluacion);
+			session.delete(solicitud);
 			
 		}catch(HibernateException e){
 			throw new MyException(e);
@@ -82,12 +85,12 @@ public class SolicitudDAOHibernate extends HibernateDaoSupport implements Evalua
 	}
 
 	@Override
-	public void modificarEvaluacion(Evaluacion evaluacion) throws MyException {
+	public void modificarSolicitud(Solicitud solicitud) throws MyException {
 		Session session = null;
 		try{
 			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 			
-			session.update(evaluacion);
+			session.update(solicitud);
 			
 		}catch(HibernateException e){
 			throw new MyException(e);

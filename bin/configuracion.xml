@@ -47,16 +47,22 @@
 	
 	<bean id="empleadoDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.EmpleadoDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
+	    <property name="empeladoDAO" ref="empleadoDao"></property>
 	</bean>
 	
-	<bean id="usuarioDao" class="co.edu.udea.iw.dao.hibernate.UsuarioDAOHibernate">
+	<bean id="evaluacionDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.EvaluacionDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
-	<bean id="clienteService" class="co.edu.udea.iw.service.ClienteService">
-	    <property name="clienteDAO" ref="clienteDao"></property>
-	    <property name="usuarioDAO" ref="usuarioDao"></property>
+	<bean id="respuestaDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.RespuestaDAOHibernate">
+	    <property name="sessionFactory" ref="sessionFactory"></property>
+	    <property name="solicitudDAO" ref="solicitudDao"></property>
+	    <property name="evaluacionDAO" ref="evaluacionDao"></property>
 	</bean>
 	
-	<context:component-scan base-package="co.edu.udea.iw.rest"/>
+	<bean id="solicitudDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.SolicitudDAOHibernate">
+	    <property name="sessionFactory" ref="sessionFactory"></property>
+	    <property name="clienteDAO" ref="clienteDao"></property>
+	    <property name="empeladoDAO" ref="empleadoDao"></property>
+	</bean>
 </beans>
