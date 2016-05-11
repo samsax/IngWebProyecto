@@ -5,7 +5,7 @@ public class Empleado {
 	String nombre;
 	String correo;
 	String cargo;
-	String contraseña;
+	String contrasena;
 	Empleado jefe;
 	public int getIdentificacion() {
 		return identificacion;
@@ -31,11 +31,11 @@ public class Empleado {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	public Empleado getJefe() {
 		return jefe;

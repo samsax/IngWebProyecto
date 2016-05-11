@@ -107,4 +107,18 @@ public class EmpleadoDAOHibernate extends HibernateDaoSupport implements Emplead
 			}
 			return empleado;
 	}
+
+		@Override
+		public Empleado obtenerEmpleadoJefe() {
+			Empleado empleado = null;
+			Session session = null;
+			try{
+				Criteria criteria = session.createCriteria(Empleado.class)
+						.add(Restrictions.eq("cargo", "administrador"));
+				empleado = (Empleado) criteria.uniqueResult(); 
+			}catch(HibernateException e){
+				throw new MyException(e);
+		}
+		return empleado;
+		}
 }
