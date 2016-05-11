@@ -33,7 +33,7 @@ public interface EmpleadoDao {
 	 * @return Retorna el empleado buscado.
 	 * @throws MyException
 	 */
-	public Empleado obtenerEmpleadoLogin(int correo) throws MyException;
+	public Empleado obtenerEmpleadoLogin(String correo) throws MyException;
 
 	/**
 	 * Firma del método que nos permite crear un nuevo empleado.

@@ -93,4 +93,18 @@ public class EmpleadoDAOHibernate extends HibernateDaoSupport implements Emplead
 		
 	}
 
+		@Override
+		public Empleado obtenerEmpleadoLogin(String correo) throws MyException {
+			Empleado empleado = null;
+			Session session = null;
+			try{
+				session = getHibernateTemplate().getSessionFactory().getCurrentSession();
+				
+				empleado = (Empleado)session.get(Empleado.class, correo);
+				
+			}catch(HibernateException e){
+				throw new MyException(e);
+			}
+			return empleado;
+	}
 }
