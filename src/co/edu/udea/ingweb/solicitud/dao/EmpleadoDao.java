@@ -7,7 +7,7 @@ import co.edu.udea.ingweb.util.exception.MyException;
 
 public interface EmpleadoDao {
 	/**
-	 * Firma del método que nos permite obtener todos los empleados.
+	 * Firma del mï¿½todo que nos permite obtener todos los empleados.
 	 * 
 	 * @return Lista con los empleados.
 	 * @throws MyException
@@ -15,28 +15,28 @@ public interface EmpleadoDao {
 	public List<Empleado> listarEmpleados() throws MyException;
 
 	/**
-	 * Firma del método que nos permite obtener un único empleado.
+	 * Firma del mï¿½todo que nos permite obtener un ï¿½nico empleado.
 	 * 
 	 * @param identificacion
-	 *            con la cual se realizará la búsqueda.
+	 *            con la cual se realizarï¿½ la bï¿½squeda.
 	 * @return Retorna el empleado buscado.
 	 * @throws MyException
 	 */
 	public Empleado obtenerEmpleado(int identificacion) throws MyException;
 	
 	/**
-	 * Firma del método que nos permite obtener un único empleado 
+	 * Firma del mï¿½todo que nos permite obtener un ï¿½nico empleado 
 	 * por su correo para login en el sistema.
 	 * 
 	 * @param identificacion
-	 *            con la cual se realizará la búsqueda.
+	 *            con la cual se realizarï¿½ la bï¿½squeda.
 	 * @return Retorna el empleado buscado.
 	 * @throws MyException
 	 */
 	public Empleado obtenerEmpleadoLogin(String correo) throws MyException;
 
 	/**
-	 * Firma del método que nos permite crear un nuevo empleado.
+	 * Firma del mï¿½todo que nos permite crear un nuevo empleado.
 	 * 
 	 * @param empleado
 	 *            que se va a crear en el sistema y almacenar en la BD.
@@ -45,7 +45,7 @@ public interface EmpleadoDao {
 	public void crearEmpleado(Empleado empleado) throws MyException;
 
 	/**
-	 * Firma del método que nos permite eliminar un empleado de la base de datos. 
+	 * Firma del mï¿½todo que nos permite eliminar un empleado de la base de datos. 
 	 * @param empleado que se va a eliminar.
 	 * @throws MyException
 	 */
@@ -57,4 +57,10 @@ public interface EmpleadoDao {
 	 * @throws MyException
 	 */
 	public void modificarEmpleado(Empleado empleado) throws MyException;
+	
+	/**
+	 * Firma del mÃ©todo para retornar el administrador de solicitudes
+	 * @return
+	 */
+	public Empleado obtenerEmpleadoJefe();
 }

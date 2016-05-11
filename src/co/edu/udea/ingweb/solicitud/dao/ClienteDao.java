@@ -7,7 +7,7 @@ import co.edu.udea.ingweb.util.exception.MyException;
 
 public interface ClienteDao {
 	/**
-	 * Firma del método que nos permite obtener todos los clientes.
+	 * Firma del mï¿½todo que nos permite obtener todos los clientes.
 	 * 
 	 * @return Lista con los clientes.
 	 * @throws MyException
@@ -15,17 +15,25 @@ public interface ClienteDao {
 	public List<Cliente> listarClientes() throws MyException;
 
 	/**
-	 * Firma del método que nos permite obtener un único cliente.
+	 * Firma del mï¿½todo que nos permite obtener un ï¿½nico cliente.
 	 * 
 	 * @param identificacion
-	 *            con el cual se realizará la búsqueda.
+	 *            con el cual se realizarï¿½ la bï¿½squeda.
 	 * @return Retorna el cliente buscado.
 	 * @throws MyException
 	 */
 	public Cliente obtenerCliente(int identificacion) throws MyException;
 
 	/**
-	 * Firma del método que nos permite crear un nuevo cliente.
+	 * Forma del mÃ©todo para obtener un Ãºnico cliente por medio del correo
+	 * @param correo
+	 * @return
+	 * @throws MyException
+	 */
+	public Cliente obtenerCliente(String correo) throws MyException;
+	
+	/**
+	 * Firma del mï¿½todo que nos permite crear un nuevo cliente.
 	 * 
 	 * @param cliente
 	 *            que se va a crear en el sistema y almacenar en la BD.
@@ -34,7 +42,7 @@ public interface ClienteDao {
 	public void crearCliente(Cliente cliente) throws MyException;
 
 	/**
-	 * Firma del método que nos permite eliminar un cliente de la base de datos. 
+	 * Firma del mï¿½todo que nos permite eliminar un cliente de la base de datos. 
 	 * @param cliente que se va a eliminar.
 	 * @throws MyException
 	 */

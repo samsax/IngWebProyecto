@@ -48,7 +48,22 @@ public class ClienteDAOHibernate extends HibernateDaoSupport implements ClienteD
 
 	}
 
-
+	@Override
+	public Cliente obtenerCliente(String correo) throws MyException{
+		Cliente cliente = null;
+		Session session = null;
+		try{
+			Criteria criteria = session.createCriteria(Cliente.class)
+					.add(Restrictions.eq("correo", correo));
+			cliente = (Cliente) criteria.uniqueResult(); 
+		}catch(HibernateException e){
+			throw new MyException(e);
+			
+	}
+	return cliente;
+	}
+	
+	
 	@Override
 	public void crearCliente(Cliente cliente) throws MyException {
 		Session session = null;
