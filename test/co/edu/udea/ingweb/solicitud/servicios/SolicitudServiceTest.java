@@ -131,7 +131,7 @@ public class SolicitudServiceTest {
 	@Test
 	public void testSetEmpleado() {
 		try {
-			solicitudService.setEmpleado(1, 1);
+			solicitudService.setEmpleado(1, 2);
 		} catch(IWDaoException e){
 			e.printStackTrace();
 			fail(e.getMessage());

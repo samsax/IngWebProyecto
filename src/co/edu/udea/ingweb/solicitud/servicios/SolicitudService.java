@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
+import co.edu.udea.ingweb.solicitud.dao.hibernate.EmpleadoDAOHibernate;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
@@ -158,9 +159,8 @@ public class SolicitudService {
 	}
 
 	public void setEmpleado(int idSolicitud, int idEmpleado) throws IWDaoException, IWServiceException, MyException{
-		EmpleadoDao empleadoDao = null;
-		Solicitud solicitud = null;
-		Empleado empleado = null;
+		Solicitud solicitud;
+		Empleado empleado;
 		 
 		if(Validaciones.isTextoVacio(idSolicitud)){
 			throw new IWServiceException("El código de la solicitud no puede ser nulo, ni una cadena de caracteres vacia");

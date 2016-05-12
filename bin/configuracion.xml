@@ -78,5 +78,6 @@
 	</bean>
 	<bean id="solicitudService" class="co.edu.udea.ingweb.solicitud.servicios.SolicitudService">
 	    <property name="solicitudDAO" ref="solicitudDao"></property>
-	</bean>
+	    <property name="empleadoDao" ref="empleadoDao"></property>
+	    </bean>
 </beans>
