@@ -19,7 +19,7 @@ import co.edu.udea.ingweb.util.exception.Validaciones;
  */
 public class RespuestaService {
 
-	private RespuestaDao respuestaDao;
+	private RespuestaDao respuestaDAO;
 	
 	public void guardaRespuesta(int idRespuesta, String texto, 
 			Solicitud solicitud, Evaluacion evaluacion) 
@@ -40,7 +40,7 @@ public class RespuestaService {
 		respuesta.setTexto(texto);
 		respuesta.setCodigo(solicitud);
 		respuesta.setEvaluacion(evaluacion);
-		respuestaDao.crearRespuesta(respuesta);;
+		respuestaDAO.crearRespuesta(respuesta);;
 		
 	}
 	
@@ -57,7 +57,7 @@ public class RespuestaService {
 			throw new IWServiceException("El tiempo de evaluación no puede ser nulo, ni una cadena de caracteres vacia");
 		}
 		
-		respuesta = respuestaDao.obtenerRespuesta(idRespuesta);
+		respuesta = respuestaDAO.obtenerRespuesta(idRespuesta);
 		
 		if(respuesta == null){
 			throw new IWServiceException("La evaluación a modificar no existe en el sistema");
@@ -67,7 +67,7 @@ public class RespuestaService {
 		respuesta.setTexto(texto);
 		respuesta.setCodigo(solicitud);
 		respuesta.setEvaluacion(evaluacion);		
-		respuestaDao.modificarRespuesta(respuesta);
+		respuestaDAO.modificarRespuesta(respuesta);
 		
 	}
 	
@@ -83,18 +83,18 @@ public class RespuestaService {
 			throw new IWServiceException("La identificacion de la respuesta no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
-		respuesta = respuestaDao.obtenerRespuesta(idRespuesta);
+		respuesta = respuestaDAO.obtenerRespuesta(idRespuesta);
 		
 		if(respuesta == null){
 			throw new IWServiceException("La respuesta a eliminar no existe en el sistema");
 		}
 		
-		respuestaDao.eliminarRespuesta(respuesta);
+		respuestaDAO.eliminarRespuesta(respuesta);
 		
 	}
 	
 	public List<Respuesta> obtener() throws IWDaoException, MyException{
-		return respuestaDao.listarRespuestas();
+		return respuestaDAO.listarRespuestas();
 	}
 	
 	public Respuesta obtener(int idRespuesta) throws IWDaoException, IWServiceException, MyException{
@@ -102,15 +102,15 @@ public class RespuestaService {
 			throw new IWServiceException("La identificación de la respuesta a buscar no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
-		return respuestaDao.obtenerRespuesta(idRespuesta);
+		return respuestaDAO.obtenerRespuesta(idRespuesta);
 	}
 
 	public RespuestaDao getRespuestaDAO() {
-		return respuestaDao;
+		return respuestaDAO;
 	}
 
 	public void setRespuestaDAO(RespuestaDao respuestaDAO) {
-		this.respuestaDao = respuestaDAO;
+		this.respuestaDAO = respuestaDAO;
 	}
 	
 }

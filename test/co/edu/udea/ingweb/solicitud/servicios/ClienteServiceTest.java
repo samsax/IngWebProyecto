@@ -49,7 +49,7 @@ public class ClienteServiceTest {
 	@Test
 	public void testEliminarCliente() throws IWServiceException, MyException {
 		try {
-			clienteService.eliminarCliente(1152454724);
+			clienteService.eliminarCliente(1);
 		} catch (IWDaoException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
