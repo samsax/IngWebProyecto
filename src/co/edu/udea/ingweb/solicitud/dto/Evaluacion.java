@@ -1,14 +1,14 @@
 package co.edu.udea.ingweb.solicitud.dto;
 
 public class Evaluacion {
-	int idEvaluacion;
+	Integer idEvaluacion;
 	String tiempo;
 	String conformidad;
 	String atencion;
-	public int getIdEvaluacion() {
+	public Integer getIdEvaluacion() {
 		return idEvaluacion;
 	}
-	public void setIdEvaluacion(int idEvaluacion) {
+	public void setIdEvaluacion(Integer idEvaluacion) {
 		this.idEvaluacion = idEvaluacion;
 	}
 	public String getTiempo() {

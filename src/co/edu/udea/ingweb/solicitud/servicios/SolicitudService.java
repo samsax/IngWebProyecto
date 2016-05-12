@@ -19,6 +19,7 @@ import co.edu.udea.ingweb.util.exception.Validaciones;
 public class SolicitudService {
 	
 	private SolicitudDao solicitudDao;
+	private EmpleadoDao empleadoDao;
 	
 	public void guardaSolicitud(int idCodigo, String tipo, String texto, 
 			String estado, int dificultad, Date fechaCrea, 
@@ -179,5 +180,13 @@ public class SolicitudService {
 			throw new MyException("Error al modificar la solicitud");
 		}
 		
+	}
+
+	public EmpleadoDao getEmpleadoDao() {
+		return empleadoDao;
+	}
+
+	public void setEmpleadoDao(EmpleadoDao empleadoDao) {
+		this.empleadoDao = empleadoDao;
 	}
 }

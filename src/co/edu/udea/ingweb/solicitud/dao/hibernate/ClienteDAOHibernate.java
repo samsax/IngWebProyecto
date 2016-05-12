@@ -54,6 +54,7 @@ public class ClienteDAOHibernate extends HibernateDaoSupport implements ClienteD
 		Cliente cliente = null;
 		Session session = null;
 		try{
+			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 			Criteria criteria = session.createCriteria(Cliente.class)
 					.add(Restrictions.eq("correo", correo));
 			cliente = (Cliente) criteria.uniqueResult(); 

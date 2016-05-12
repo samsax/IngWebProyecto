@@ -31,6 +31,7 @@
 	            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 	            <prop key="hibernate.show_sql">true</prop>
 				<prop key="javax.persistence.validation.mode">none</prop>
+			
 	        </props>
 	    </property>
 	</bean>
@@ -54,11 +55,23 @@
 	
 	<bean id="respuestaDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.RespuestaDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
-	  
+	  	<property name="evaluacionDao" ref ="evaluacionDao"></property>	
 	</bean>
 	
 	<bean id="solicitudDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.SolicitudDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
-	   
+	    <property name="empleadoDao" ref ="empleadoDao"></property>	
+	    <property name="clienteDao" ref ="clienteDao"></property>	   
 	</bean>
+	
+	<bean id="evaluacionService" class="co.edu.udea.ingweb.solicitud.servicios.EvaluacionService">
+	    <property name="evaluacionDAO" ref="evaluacionDao"></property>
+	</bean>
+	<bean id="clienteService" class="co.edu.udea.ingweb.solicitud.servicios.ClienteService">
+	    <property name="clienteDAO" ref="clienteDao"></property>
+	</bean>
+	<bean id="empleadoService" class="co.edu.udea.ingweb.solicitud.servicios.EmpleadoService">
+	    <property name="empleadoDAO" ref="empleadoDao"></property>
+	</bean>
+	
 </beans>

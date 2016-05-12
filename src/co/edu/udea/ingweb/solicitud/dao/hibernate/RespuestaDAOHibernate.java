@@ -8,12 +8,23 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import co.edu.udea.ingweb.solicitud.dao.EvaluacionDao;
 import co.edu.udea.ingweb.solicitud.dao.RespuestaDao;
 import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.solicitud.dto.Respuesta;
 import co.edu.udea.ingweb.util.exception.MyException;
 
 public class RespuestaDAOHibernate extends HibernateDaoSupport implements RespuestaDao {
+	
+	EvaluacionDao evaluacionDao;
+	
+	public EvaluacionDao getEvaluacionDao() {
+		return evaluacionDao;
+	}
+
+	public void setEvaluacionDao(EvaluacionDao evaluacionDao) {
+		this.evaluacionDao = evaluacionDao;
+	}
 
 	@Override
 	public List<Respuesta> listarRespuestas() throws MyException {

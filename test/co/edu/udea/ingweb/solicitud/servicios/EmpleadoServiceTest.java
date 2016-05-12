@@ -1,26 +1,36 @@
 package co.edu.udea.ingweb.solicitud.servicios;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
-import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
+import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@Transactional
+@ContextConfiguration(locations = "classpath:configuracion.xml")
 public class EmpleadoServiceTest {
 
 	@Autowired
-	EmpleadoService empleadoServece;
+	EmpleadoService empleadoServicio;
 	
 	@Test
-	public void testGuardaEmpleado() {
+	public void testGuardaEmpleado() throws IWServiceException, MyException {
 		try{
-			empleadoServece.guardaEmpleado(1152454724, "Empleado Prueba", "correo@prueba.com", "empleado", "123456");
+			empleadoServicio.guardaEmpleado(1, "Empleado Prueba", "correo@prueba.com", "empleado", "123456");
 		}catch(IWDaoException e){
 			e.printStackTrace();
 			fail(e.getMessage());
@@ -28,9 +38,9 @@ public class EmpleadoServiceTest {
 	}
 
 	@Test
-	public void testActualizarEmpleado() {
+	public void testActualizarEmpleado() throws IWServiceException, MyException {
 		try {
-			empleadoServece.actualizarEmpleado(1152454724, "Empleado Prueba", "correo@editado.com", "empleado editado");
+			empleadoServicio.actualizarEmpleado(1, "Empleado Prueba", "correo@editado.com", "empleado editado");
 		} catch (IWDaoException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
@@ -38,9 +48,9 @@ public class EmpleadoServiceTest {
 	}
 
 	@Test
-	public void testEliminarEmpleado() {
+	public void testEliminarEmpleado() throws IWServiceException, MyException {
 		try {
-			empleadoServece.eliminarEmpleado(1152454724);
+			empleadoServicio.eliminarEmpleado(1);
 		} catch (IWDaoException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
@@ -48,10 +58,10 @@ public class EmpleadoServiceTest {
 	}
 
 	@Test
-	public void testObtener() {
+	public void testObtener() throws MyException {
 		List<Empleado> empleados = null;
 		try {
-			empleados = empleadoServece.obtener();
+			empleados = empleadoServicio.obtener();
 			assertTrue(empleados.size() >0);
 			
 		} catch (IWDaoException e) {
@@ -61,11 +71,11 @@ public class EmpleadoServiceTest {
 	}
 
 	@Test
-	public void testObtenerInt() {
+	public void testObtenerInt() throws IWDaoException, IWServiceException {
 		Empleado empleado = null;
 		try {
-			empleadoServece = new EmpleadoService();
-			empleado= empleadoServece.obtener(1152454724);
+			empleadoServicio = new EmpleadoService();
+			empleado= empleadoServicio.obtener(2);
 			System.out.println("Cliente: " + empleado.getNombre());
 			assertNotNull(empleado);
 			
