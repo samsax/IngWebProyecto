@@ -43,7 +43,7 @@ public class EvaluacionServiceTest {
 	@Test
 	public void testActualizarEvaluacion() {
 		try{
-			evaluacionService.actualizarEvaluacion(5, "15", "3", "4");}
+			evaluacionService.actualizarEvaluacion(2, "15", "3", "4");}
 			catch(IWDaoException e){
 				e.printStackTrace();
 				fail(e.getMessage());
@@ -59,7 +59,7 @@ public class EvaluacionServiceTest {
 	@Test
 	public void testEliminarEvaluacion() {
 		try{
-			evaluacionService.eliminarEvaluacion(5);}
+			evaluacionService.eliminarEvaluacion(4);}
 			catch(IWDaoException e){
 				e.printStackTrace();
 				fail(e.getMessage());
@@ -91,7 +91,7 @@ public class EvaluacionServiceTest {
 	@Test
 	public void testObtenerInt() throws IWDaoException, IWServiceException, MyException {
 		Evaluacion evaluacion = evaluacionService.obtener(3);
-		assertEquals(5, evaluacion.getAtencion());
+		assertEquals("5", evaluacion.getAtencion());
 	}
 
 }
