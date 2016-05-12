@@ -53,7 +53,7 @@ private EmpleadoDao empleadoDao;
 	}
 	
 	public void actualizarEmpleado(int identificacion, String nombres, 
-			String correoElectronico, String cargo, String contrasena) 
+			String correoElectronico, String cargo) 
 					throws IWDaoException, IWServiceException, MyException{
 		
 		Empleado empleado = null;
@@ -69,9 +69,6 @@ private EmpleadoDao empleadoDao;
 		}
 		if(Validaciones.isTextoVacio(correoElectronico)){
 			throw new IWServiceException("El correo electr�nico del empleado no puede ser nula, ni una cadena de caracteres vacia");
-		}
-		if(Validaciones.isTextoVacio(contrasena)){
-			throw new IWServiceException("La contraseña del empleado no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
 		empleado = empleadoDao.obtenerEmpleado(identificacion);
