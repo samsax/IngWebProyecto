@@ -53,10 +53,8 @@ public class RespuestaDAOHibernate extends HibernateDaoSupport implements Respue
 			
 		}catch(HibernateException e){
 			throw new MyException(e);
-			
-	}
-	
-	return respuesta;
+		}
+		return respuesta;
 
 	}
 

@@ -4,41 +4,28 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/asm-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/commons-logging.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/hibernate3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jackson-core-asl-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jackson-jaxrs-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jackson-mapper-asl-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jackson-xc-1.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jersey-bundle-1.17.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jersey-client-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jersey-core-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jersey-json-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jersey-server-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jersey-spring-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jettison-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/slf4j-log4j12-1.7.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-aop-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-beans-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-context-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-core-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-expression-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-jdbc-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-orm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-test-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-tx-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/spring-web-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-aop-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-beans-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-context-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-core-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-expression-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-jdbc-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-orm-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-test-4.1.6.RELEASE.jar" sourcepath="C:/Users/bonam/.m2/repository/org/springframework/spring-test/4.1.6.RELEASE/spring-test-4.1.6.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-tx-4.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bonam/Documents/Eclipse/Librerías/Spring4/spring-web-4.1.6.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -37,15 +37,12 @@ public class ClienteDAOHibernate extends HibernateDaoSupport implements ClienteD
 		Session session = null;
 		try{
 			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
-			
 			cliente = (Cliente)session.get(Cliente.class, identificacion);
-			
 		}catch(HibernateException e){
 			throw new MyException(e);
-			
-	}
+		}
 	
-	return cliente;
+		return cliente;
 
 	}
 

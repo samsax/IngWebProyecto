@@ -2,12 +2,22 @@ package co.edu.udea.ingweb.solicitud.servicios;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+
+import co.edu.udea.ingweb.solicitud.dto.Cliente;
+import co.edu.udea.ingweb.solicitud.dto.Empleado;
+import co.edu.udea.ingweb.solicitud.dto.Solicitud;
+import co.edu.udea.ingweb.util.exception.IWDaoException;
+import co.edu.udea.ingweb.util.exception.IWServiceException;
+import co.edu.udea.ingweb.util.exception.MyException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
@@ -17,37 +27,121 @@ public class SolicitudServiceTest {
 	SolicitudService solicitudService;
 	@Test
 	public void testGuardaSolicitud() {
-		fail("Not yet implemented");
+		try{
+			Cliente cliente = new Cliente();
+		Empleado empleado = new Empleado();
+		Date date = new Date();
+		solicitudService.guardaSolicitud(3, "Queja", "Queja prueba", "activa", 2, date, cliente, empleado);
+		}catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(IWServiceException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	public void testActualizarSolicitud() {
-		fail("Not yet implemented");
+		try {
+			Cliente cliente = new Cliente();
+			Empleado empleado = new Empleado();
+			Date date = new Date("2016/05/14");
+			solicitudService.actualizarSolicitud(2, "Queja update", "Queja prueba update", "cerrada", 2, date, cliente, empleado);
+		}catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(IWServiceException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	public void testEliminarSolicitud() {
-		fail("Not yet implemented");
+		try {
+			solicitudService.eliminarSolicitud(2);
+		}catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(IWServiceException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	public void testObtener() {
-		fail("Not yet implemented");
+		List<Solicitud> solicitudes= null;
+		try {
+			solicitudes = solicitudService.obtener();
+			assertTrue(solicitudes.size() >0);
+		} catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	public void testObtenerInt() {
-		fail("Not yet implemented");
+		Solicitud solicitud= null;
+		try {
+			solicitud = solicitudService.obtener(2);
+			assertNotNull(solicitud);
+		} catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		} catch (IWServiceException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	public void testSetDificultad() {
-		fail("Not yet implemented");
+		try {
+			solicitudService.setDificultad(2, 5);
+		} catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		} catch (IWServiceException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
 	public void testSetEmpleado() {
-		fail("Not yet implemented");
+		try {
+			solicitudService.setEmpleado(1, 1);
+		} catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		} catch (IWServiceException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 }

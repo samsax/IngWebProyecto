@@ -95,7 +95,7 @@ public class EvaluacionService {
 		evaluacion = evaluacionDAO.obtenerEvaluacion(idEvaluacion);
 		
 		if(evaluacion == null){
-			throw new IWServiceException("El empleado a eliminar no existe en el sistema");
+			throw new IWServiceException("La evaluacion a eliminar no existe en el sistema");
 		}
 		
 		evaluacionDAO.eliminarEvaluacion(evaluacion);

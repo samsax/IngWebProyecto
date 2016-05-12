@@ -88,7 +88,7 @@ public class ClienteServiceTest {
 		Cliente cliente = null;
 		try {
 			clienteService = new ClienteService();
-			cliente= clienteService.obtener(1);
+			cliente= clienteService.obtener(2);
 			System.out.println("Cliente: " + cliente.getNombre());
 			assertNotNull(cliente);
 			

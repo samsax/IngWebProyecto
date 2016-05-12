@@ -32,7 +32,7 @@ public class RespuestaServiceTest {
 		try{
 			Solicitud solicitud = new Solicitud(); 
 			Evaluacion evaluacion = new Evaluacion();
-			respuestaService.guardaRespuesta(1, "Prueba Respuesta", solicitud, evaluacion);	
+			respuestaService.guardaRespuesta(2, "Prueba Respuesta 2", solicitud, evaluacion);	
 		}catch(IWDaoException e){
 			e.printStackTrace();
 			fail(e.getMessage());
@@ -101,7 +101,7 @@ public class RespuestaServiceTest {
 	public void testObtenerInt() throws IWServiceException {
 		Respuesta respuesta= null;
 		try {
-			respuesta = respuestaService.obtener(1);
+			respuesta = respuestaService.obtener(2);
 			assertNotNull(respuesta);
 		} catch(IWDaoException e){
 			e.printStackTrace();
