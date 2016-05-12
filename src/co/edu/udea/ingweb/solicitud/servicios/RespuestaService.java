@@ -10,12 +10,11 @@ import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
-/*
- * 
-	int idRespuesta;
-	String texto;
-	Solicitud codigo;
-	Respuesta respuesta;
+/**
+ * int idRespuesta;
+ * String texto;
+ * Solicitud codigo;
+ * Respuesta respuesta;
  */
 public class RespuestaService {
 

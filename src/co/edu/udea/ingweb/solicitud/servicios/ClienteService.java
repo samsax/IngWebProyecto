@@ -23,14 +23,8 @@ public class ClienteService {
 	private ClienteDao clienteDao;
 	
 	public void guardaCliente(int cedula, String nombres, 
-<<<<<<< HEAD
-			String correoElectronico) throws IWDaoException, IWServiceException, MyException{
+		String correoElectronico) throws IWDaoException, IWServiceException, MyException{
 
-=======
-			String correoElectronico) throws IWDaoException, IWServiceException{
-
-		
->>>>>>> 19ec584676eeb041afd6e98a68cd6b74ba033a8c
 		Cliente cliente = null;
 		
 		if(Validaciones.isTextoVacio(cedula)){
@@ -112,22 +106,16 @@ public class ClienteService {
 	public List<Cliente> obtener() throws IWDaoException, MyException{
 		return clienteDao.listarClientes();
 	}
-	
-<<<<<<< HEAD
-	public Cliente obtener(String cedula) throws IWDaoException, IWServiceException, MyException{
-		if(cedula == null && "".equals(cedula)){
-			throw new IWServiceException("La c�dula del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
-=======
-	public Cliente obtener(String correo) throws IWDaoException, IWServiceException{
+
+	public Cliente obtener(String correo) throws IWDaoException, IWServiceException, MyException{
 		if(correo == null && "".equals(correo)){
-			throw new IWServiceException("El correo del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
->>>>>>> 19ec584676eeb041afd6e98a68cd6b74ba033a8c
+			throw new IWServiceException("La c�dula del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
+
 		}
-		
 		return clienteDao.obtenerCliente(correo);
 	}
 
-	public Cliente obtener(int identificacion) throws IWDaoException, IWServiceException{
+	public Cliente obtener(int identificacion) throws IWDaoException, IWServiceException, MyException{
 		if(identificacion == -1 && "".equals(identificacion)){
 			throw new IWServiceException("La cedula del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
 		}

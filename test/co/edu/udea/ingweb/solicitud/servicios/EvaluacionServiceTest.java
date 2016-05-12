@@ -2,17 +2,12 @@ package co.edu.udea.ingweb.solicitud.servicios;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
-
 import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
@@ -23,6 +18,7 @@ import co.edu.udea.ingweb.util.exception.MyException;
 public class EvaluacionServiceTest {
 	@Autowired
 	EvaluacionService evaluacionService;
+	
 	@Test
 	public void testGuardaEvaluacion() throws IWDaoException, IWServiceException, MyException {
 		try{
@@ -74,16 +70,18 @@ public class EvaluacionServiceTest {
 
 	@Test
 	public void testObtener() {
-		List<Evaluacion> evaluaciones;
+		List<Evaluacion> evaluaciones = null;
 		try{
-			evaluaciones = evaluacionService.obtener();}
-			catch(IWDaoException e){
-				e.printStackTrace();
-				fail(e.getMessage());
-			}catch(MyException e){
-				e.printStackTrace();
-				fail(e.getMessage());
-			}
+			evaluaciones = evaluacionService.obtener();
+			assertTrue(evaluaciones.size() >0);
+		}
+		catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test

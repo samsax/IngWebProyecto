@@ -79,7 +79,6 @@ private EmpleadoDao empleadoDao;
 		
 		empleado.setIdentificacion(identificacion);
 		empleado.setCargo(cargo);
-		empleado.setContrasena(contrasena);
 		empleado.setNombre(nombres);
 		empleado.setCorreo(correoElectronico);
 		
