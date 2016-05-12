@@ -57,5 +57,12 @@ public interface EmpleadoDao {
 	 * @throws MyException
 	 */
 	public void modificarEmpleado(Empleado empleado) throws MyException;
+
+	/**
+	 *  Firma del método usado para obtener la lista de subordinados de un empleado
+	 * @param idJefe
+	 * @return
+	 */
+	public List<Empleado> obtenerListaSubordinados(int idJefe);
 	
 }

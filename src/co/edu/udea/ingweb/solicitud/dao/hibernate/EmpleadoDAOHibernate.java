@@ -93,19 +93,34 @@ public class EmpleadoDAOHibernate extends HibernateDaoSupport implements Emplead
 		
 	}
 
-		@Override
-		public Empleado obtenerEmpleadoLogin(String correo) throws MyException {
-			Empleado empleado = null;
-			Session session = null;
-			try{
-				session = getHibernateTemplate().getSessionFactory().getCurrentSession();
-				
-				empleado = (Empleado)session.get(Empleado.class, correo);
-				
-			}catch(HibernateException e){
-				throw new MyException(e);
-			}
-			return empleado;
+	@Override
+	public Empleado obtenerEmpleadoLogin(String correo) throws MyException {
+		Empleado empleado = null;
+		Session session = null;
+		try{
+			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
+			
+			empleado = (Empleado)session.get(Empleado.class, correo);
+			
+		}catch(HibernateException e){
+			throw new MyException(e);
+		}
+		return empleado;
 	}
 
+	@Override
+	public List<Empleado> obtenerListaSubordinados(int idJefe){
+		List<Empleado> empleados = new ArrayList<Empleado>();
+		Empleado jefe = this.obtenerEmpleado(idJefe);
+		try{
+			Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
+			Criteria criteria = session.createCriteria(Empleado.class)
+					.add(Restrictions.eq("jefe", jefe));
+			empleados = criteria.list();
+		}catch(HibernateException e){
+			throw new MyException(e);
+		}
+		return empleados;
+	};
+	
 }
