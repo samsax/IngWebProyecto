@@ -3,7 +3,7 @@ package co.edu.udea.ingweb.solicitud.servicios;
 import java.util.List;
 
 import co.edu.udea.ingweb.solicitud.dao.RespuestaDao;
-import co.edu.udea.ingweb.solicitud.dto.respuesta;
+import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.solicitud.dto.Respuesta;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
@@ -22,10 +22,10 @@ public class RespuestaService {
 	private RespuestaDao respuestaDao;
 	
 	public void guardaRespuesta(int idRespuesta, String texto, 
-			Solicitud solicitud, respuesta respuesta) 
+			Solicitud solicitud, Evaluacion evaluacion) 
 					throws IWDaoException, IWServiceException, MyException{
 		
-		Respuesta respuesta = null;
+		Respuesta respuesta= null;
 		
 		if(Validaciones.isTextoVacio(idRespuesta)){
 			throw new IWServiceException("La identificación de la evaluación no puede ser nula, ni una cadena de caracteres vacia");
@@ -39,14 +39,13 @@ public class RespuestaService {
 		respuesta.setIdRespuesta(idRespuesta);
 		respuesta.setTexto(texto);
 		respuesta.setCodigo(solicitud);
-		respuesta.setrespuesta(respuesta);
-		
+		respuesta.setEvaluacion(evaluacion);
 		respuestaDao.crearRespuesta(respuesta);;
 		
 	}
 	
 	public void actualizarRespuesta(int idRespuesta, String texto, 
-			Solicitud solicitud, respuesta respuesta) 
+			Solicitud solicitud, Evaluacion evaluacion) 
 					throws IWDaoException, IWServiceException, MyException{
 		
 		Respuesta respuesta = null;
@@ -67,8 +66,7 @@ public class RespuestaService {
 		respuesta.setIdRespuesta(idRespuesta);
 		respuesta.setTexto(texto);
 		respuesta.setCodigo(solicitud);
-		respuesta.setrespuesta(respuesta);
-		
+		respuesta.setEvaluacion(evaluacion);		
 		respuestaDao.modificarRespuesta(respuesta);
 		
 	}

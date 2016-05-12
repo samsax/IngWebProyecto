@@ -3,9 +3,10 @@ package co.edu.udea.ingweb.solicitud.servicios;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
-import co.edu.udea.ingweb.solicitud.dao.hibernate.EmpleadoDAOHibernate;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;

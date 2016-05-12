@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
-
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
+import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
 /**
  * La anotación es para permitir que se hagan transacciones de manera adecuada
@@ -23,7 +23,7 @@ public class ClienteService {
 	private ClienteDao clienteDao;
 	
 	public void guardaCliente(int cedula, String nombres, String apellidos, 
-			String correoElectronico, String usuarioCrea) throws IWDaoException, IWServiceException{
+			String correoElectronico, String usuarioCrea) throws IWDaoException, IWServiceException, MyException{
 		
 		Cliente cliente = null;
 		
@@ -44,7 +44,7 @@ public class ClienteService {
 		}
 		
 		if(!Validaciones.isEmail(correoElectronico)){
-			throw new IWServiceException("El correo electr�nico del cliente debe ser v�lido");
+			throw new IWServiceException("El correo electronico del cliente debe ser valido");
 		}
 		
 		if(clienteDao.obtenerCliente(correoElectronico) != null){

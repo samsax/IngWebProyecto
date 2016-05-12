@@ -2,11 +2,15 @@ package co.edu.udea.ingweb.solicitud.servicios;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
+import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
+
 
 
 @Transactional
@@ -16,7 +20,7 @@ private EmpleadoDao empleadoDao;
 	
 	public void guardaEmpleado(int identificacion, String nombres, 
 			String correoElectronico, String cargo, String contrasena) 
-					throws IWDaoException, IWServiceException{
+					throws IWDaoException, IWServiceException, MyException{
 		
 		Empleado empleado = null;
 		
@@ -44,13 +48,13 @@ private EmpleadoDao empleadoDao;
 		empleado.setNombre(nombres);
 		empleado.setCorreo(correoElectronico);
 		
-		empleadoDao.crearEmpleado(empleado);;
+		empleadoDao.crearEmpleado(empleado);
 		
 	}
 	
 	public void actualizarEmpleado(int identificacion, String nombres, 
 			String correoElectronico, String cargo, String contrasena) 
-					throws IWDaoException, IWServiceException{
+					throws IWDaoException, IWServiceException, MyException{
 		
 		Empleado empleado = null;
 		
@@ -86,7 +90,7 @@ private EmpleadoDao empleadoDao;
 		
 	}
 	
-	public void eliminarEmpleado(int cedula) throws IWDaoException, IWServiceException{
+	public void eliminarEmpleado(int cedula) throws IWDaoException, IWServiceException, MyException{
 		
 		Empleado empleado = null;
 		
@@ -104,11 +108,11 @@ private EmpleadoDao empleadoDao;
 		
 	}
 	
-	public List<Empleado> obtener() throws IWDaoException{
+	public List<Empleado> obtener() throws IWDaoException, MyException{
 		return empleadoDao.listarEmpleados();
 	}
 	
-	public Empleado obtener(int cedula) throws IWDaoException, IWServiceException{
+	public Empleado obtener(int cedula) throws IWDaoException, IWServiceException, MyException{
 		if(cedula == -1 && "".equals(cedula)){
 			throw new IWServiceException("La c�dula del empleado a buscar no puede ser nula, ni una cadena de caracteres vacia");
 		}
