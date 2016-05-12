@@ -109,8 +109,9 @@ public class EmpleadoDAOHibernate extends HibernateDaoSupport implements Emplead
 	}
 
 		@Override
-		public Empleado obtenerEmpleadoJefe() {
+		public Empleado obtenerEmpleadoJefe() throws MyException{
 			Empleado empleado = null;
+			Empleado jefe = null;
 			Session session = null;
 			try{
 				Criteria criteria = session.createCriteria(Empleado.class)

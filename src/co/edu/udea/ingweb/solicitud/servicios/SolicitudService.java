@@ -3,7 +3,9 @@ package co.edu.udea.ingweb.solicitud.servicios;
 import java.util.Date;
 import java.util.List;
 
+import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
+import co.edu.udea.ingweb.solicitud.dao.hibernate.EmpleadoDAOHibernate;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
@@ -130,4 +132,51 @@ public class SolicitudService {
 		this.solicitudDao = solicitudDAO;
 	}
 
+	public void setDificultad(int idSolicitud, int dificultad) throws IWDaoException, IWServiceException, MyException{
+
+		Solicitud solicitud = null;
+		 
+		if(Validaciones.isTextoVacio(idSolicitud)){
+			throw new IWServiceException("El código de la solicitud no puede ser nulo, ni una cadena de caracteres vacia");
+		}
+		if(Validaciones.isTextoVacio(dificultad)){
+			throw new IWServiceException("La dificultad de la solicitud no puede ser nula, ni una cadena de caracteres vacia");
+		}
+		
+		solicitud = solicitudDao.obtenerSolicitud(idSolicitud);
+		
+		solicitud.setDificultad(dificultad);
+		
+		try {
+			solicitudDao.modificarSolicitud(solicitud);
+		} catch (MyException e) {
+			throw new MyException("Error al modificar la solicitud");
+		}
+		
+	}
+
+	public void setEmpleado(int idSolicitud, int idEmpleado) throws IWDaoException, IWServiceException, MyException{
+		EmpleadoDao empleadoDao = null;
+		Solicitud solicitud = null;
+		Empleado empleado = null;
+		 
+		if(Validaciones.isTextoVacio(idSolicitud)){
+			throw new IWServiceException("El código de la solicitud no puede ser nulo, ni una cadena de caracteres vacia");
+		}
+		if(Validaciones.isTextoVacio(idEmpleado)){
+			throw new IWServiceException("La dificultad de la solicitud no puede ser nula, ni una cadena de caracteres vacia");
+		}
+		
+		solicitud = solicitudDao.obtenerSolicitud(idSolicitud);
+		empleado = empleadoDao.obtenerEmpleado(idEmpleado);
+		
+		solicitud.setEmpleado(empleado);
+		
+		try {
+			solicitudDao.modificarSolicitud(solicitud);
+		} catch (MyException e) {
+			throw new MyException("Error al modificar la solicitud");
+		}
+		
+	}
 }

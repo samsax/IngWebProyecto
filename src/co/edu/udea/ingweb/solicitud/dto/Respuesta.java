@@ -5,6 +5,7 @@ public class Respuesta {
 	String texto;
 	Solicitud codigo;
 	Evaluacion evaluacion;
+	
 	public int getIdRespuesta() {
 		return idRespuesta;
 	}

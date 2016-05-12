@@ -59,8 +59,8 @@ public interface EmpleadoDao {
 	public void modificarEmpleado(Empleado empleado) throws MyException;
 	
 	/**
-	 * Firma del método para retornar el administrador de solicitudes
+	 * Firma del método para retornar el administrador de solicitudes dado un subordinado
 	 * @return
 	 */
-	public Empleado obtenerEmpleadoJefe();
+	Empleado obtenerEmpleadoJefe() throws MyException;
 }

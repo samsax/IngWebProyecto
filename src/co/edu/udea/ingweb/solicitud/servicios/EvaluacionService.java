@@ -8,18 +8,12 @@ import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
-/*
- * 
-	int idEvaluacion;
-	String tiempo;
-	String conformidad;
-	String atencion;
- */
+
 public class EvaluacionService {
 	
 	private EvaluacionDao evaluacionDao;
 		
-	public void guardaEmpleado(int idEvaluacion, String tiempo, 
+	public void guardaEvaluacion(int idEvaluacion, String tiempo, 
 			String conformidad, String atencion) 
 					throws IWDaoException, IWServiceException, MyException{
 		
