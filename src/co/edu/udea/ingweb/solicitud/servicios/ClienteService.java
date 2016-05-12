@@ -22,8 +22,9 @@ import co.edu.udea.ingweb.util.exception.Validaciones;
 public class ClienteService {
 	@Autowired
 	private ClienteDao clienteDao;
-	
-	public void guardaCliente(int cedula, String nombres,String correoElectronico) throws IWDaoException, IWServiceException, MyException{
+
+	public void guardaCliente(int cedula, String nombres, 
+		String correoElectronico) throws IWDaoException, IWServiceException, MyException{
 
 		Cliente cliente = null;
 		
@@ -110,8 +111,8 @@ public class ClienteService {
 	public Cliente obtener(String correo) throws IWDaoException, IWServiceException, MyException{
 		if(correo == null && "".equals(correo)){
 			throw new IWServiceException("El correo del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
+
 		}
-		
 		return clienteDao.obtenerCliente(correo);
 	}
 

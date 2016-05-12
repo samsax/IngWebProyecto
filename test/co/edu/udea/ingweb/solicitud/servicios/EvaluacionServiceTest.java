@@ -2,7 +2,6 @@ package co.edu.udea.ingweb.solicitud.servicios;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -23,6 +22,7 @@ import co.edu.udea.ingweb.util.exception.MyException;
 public class EvaluacionServiceTest {
 	@Autowired
 	EvaluacionService evaluacionService;
+	
 	@Test
 	public void testGuardaEvaluacion() throws IWDaoException, IWServiceException, MyException {
 		try{
@@ -74,16 +74,18 @@ public class EvaluacionServiceTest {
 
 	@Test
 	public void testObtener() {
-		List<Evaluacion> evaluaciones;
+		List<Evaluacion> evaluaciones = null;
 		try{
-			evaluaciones = evaluacionService.obtener();}
-			catch(IWDaoException e){
-				e.printStackTrace();
-				fail(e.getMessage());
-			}catch(MyException e){
-				e.printStackTrace();
-				fail(e.getMessage());
-			}
+			evaluaciones = evaluacionService.obtener();
+			assertTrue(evaluaciones.size() >0);
+		}
+		catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 	@Test
