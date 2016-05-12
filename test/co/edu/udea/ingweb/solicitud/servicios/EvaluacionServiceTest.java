@@ -14,6 +14,7 @@ import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@Transactional
 @ContextConfiguration(locations = "classpath:configuracion.xml")
 public class EvaluacionServiceTest {
 	@Autowired

@@ -6,15 +6,19 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.springframework.context.annotation.Bean;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
+import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
 import co.edu.udea.ingweb.util.exception.MyException;
 
 public class SolicitudDAOHibernate extends HibernateDaoSupport implements SolicitudDao
 {
-
+	private EmpleadoDao empleadoDao;
+	private ClienteDao clienteDao;
 	@Override
 	public List<Solicitud> listarSolicitudes() throws MyException {
 	List<Solicitud> solicitudes = new ArrayList<Solicitud>();
@@ -88,6 +92,22 @@ public class SolicitudDAOHibernate extends HibernateDaoSupport implements Solici
 			throw new MyException(e);
 		}
 		
+	}
+
+	public EmpleadoDao getEmpleadoDao() {
+		return empleadoDao;
+	}
+
+	public void setEmpleadoDao(EmpleadoDao empleadoDao) {
+		this.empleadoDao = empleadoDao;
+	}
+
+	public ClienteDao getClienteDao() {
+		return clienteDao;
+	}
+
+	public void setClienteDao(ClienteDao clienteDao) {
+		this.clienteDao = clienteDao;
 	}
 
 }

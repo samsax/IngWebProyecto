@@ -20,7 +20,6 @@ public class EvaluacionDAOHibernate extends HibernateDaoSupport implements Evalu
 		
 		try{
 			Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
-			
 			Criteria criteria = session.createCriteria(Evaluacion.class);
 			
 			evaluaciones = criteria.list();
@@ -31,7 +30,7 @@ public class EvaluacionDAOHibernate extends HibernateDaoSupport implements Evalu
 	}
 
 	@Override
-	public Evaluacion obtenerEvaluacion(int identificacion) throws MyException{
+	public Evaluacion obtenerEvaluacion(Integer identificacion) throws MyException{
 		Evaluacion evaluacion = null;
 		Session session = null;
 		try{

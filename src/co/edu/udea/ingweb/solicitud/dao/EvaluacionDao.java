@@ -24,7 +24,7 @@ public interface EvaluacionDao {
 	 * @return Retorna la evaluación buscada.
 	 * @throws MyException
 	 */
-	public Evaluacion obtenerEvaluacion(int idevaluacion) throws MyException;
+	public Evaluacion obtenerEvaluacion(Integer idevaluacion) throws MyException;
 
 	/**
 	 * Firma del método que nos permite crear una nueva evaluación.

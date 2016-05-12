@@ -3,6 +3,7 @@ package co.edu.udea.ingweb.solicitud.servicios;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
@@ -19,9 +20,9 @@ import co.edu.udea.ingweb.util.exception.Validaciones;
 
 @Transactional
 public class ClienteService {
-	
+	@Autowired
 	private ClienteDao clienteDao;
-	
+
 	public void guardaCliente(int cedula, String nombres, 
 		String correoElectronico) throws IWDaoException, IWServiceException, MyException{
 
@@ -106,10 +107,10 @@ public class ClienteService {
 	public List<Cliente> obtener() throws IWDaoException, MyException{
 		return clienteDao.listarClientes();
 	}
-
+	
 	public Cliente obtener(String correo) throws IWDaoException, IWServiceException, MyException{
 		if(correo == null && "".equals(correo)){
-			throw new IWServiceException("La c�dula del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("El correo del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
 
 		}
 		return clienteDao.obtenerCliente(correo);

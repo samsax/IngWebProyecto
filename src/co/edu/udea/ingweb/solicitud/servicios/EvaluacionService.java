@@ -13,7 +13,7 @@ import co.edu.udea.ingweb.util.exception.Validaciones;
 
 public class EvaluacionService {
 	@Autowired
-	private EvaluacionDao evaluacionDao;
+	private EvaluacionDao evaluacionDAO;
 		
 	public void guardaEvaluacion(int idEvaluacion, String tiempo, 
 			String conformidad, String atencion) 
@@ -41,7 +41,7 @@ public class EvaluacionService {
 		evaluacion.setConformidad(conformidad);
 		evaluacion.setTiempo(tiempo);
 		
-		evaluacionDao.crearEvaluacion(evaluacion);;
+		evaluacionDAO.crearEvaluacion(evaluacion);;
 		
 	}
 	
@@ -64,7 +64,7 @@ public class EvaluacionService {
 			throw new IWServiceException("La atención de la evaluación no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
-		evaluacion = evaluacionDao.obtenerEvaluacion(idEvaluacion);
+		evaluacion = evaluacionDAO.obtenerEvaluacion(idEvaluacion);
 		
 		if(evaluacion == null){
 			throw new IWServiceException("La evaluación a modificar no existe en el sistema");
@@ -76,7 +76,7 @@ public class EvaluacionService {
 		evaluacion.setConformidad(conformidad);
 		evaluacion.setTiempo(tiempo);
 		
-		evaluacionDao.modificarEvaluacion(evaluacion);
+		evaluacionDAO.modificarEvaluacion(evaluacion);
 		
 	}
 	
@@ -92,18 +92,18 @@ public class EvaluacionService {
 			throw new IWServiceException("La identificacion de la evaluación no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
-		evaluacion = evaluacionDao.obtenerEvaluacion(idEvaluacion);
+		evaluacion = evaluacionDAO.obtenerEvaluacion(idEvaluacion);
 		
 		if(evaluacion == null){
 			throw new IWServiceException("El empleado a eliminar no existe en el sistema");
 		}
 		
-		evaluacionDao.eliminarEvaluacion(evaluacion);
+		evaluacionDAO.eliminarEvaluacion(evaluacion);
 		
 	}
 	
 	public List<Evaluacion> obtener() throws IWDaoException, MyException{
-		return evaluacionDao.listarEvaluacion();
+		return evaluacionDAO.listarEvaluacion();
 	}
 	
 	public Evaluacion obtener(int idEvaluacion) throws IWDaoException, IWServiceException, MyException{
@@ -111,14 +111,14 @@ public class EvaluacionService {
 			throw new IWServiceException("La identificación de la evaluación a buscar no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
-		return evaluacionDao.obtenerEvaluacion(idEvaluacion);
+		return evaluacionDAO.obtenerEvaluacion(idEvaluacion);
 	}
 
 	public EvaluacionDao getEvaluacionDAO() {
-		return evaluacionDao;
+		return evaluacionDAO;
 	}
 
 	public void setEvaluacionDAO(EvaluacionDao evaluacionDAO) {
-		this.evaluacionDao = evaluacionDAO;
+		this.evaluacionDAO = evaluacionDAO;
 	}
 }

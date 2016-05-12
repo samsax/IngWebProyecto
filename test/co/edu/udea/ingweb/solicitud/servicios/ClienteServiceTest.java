@@ -1,17 +1,26 @@
 package co.edu.udea.ingweb.solicitud.servicios;
 
+
 import static org.junit.Assert.*;
 
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.internal.runners.statements.Fail;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@Transactional
+@ContextConfiguration(locations = "classpath:configuracion.xml")
 public class ClienteServiceTest {
 
 	@Autowired
@@ -30,7 +39,7 @@ public class ClienteServiceTest {
 	@Test
 	public void testActualizarCliente() throws IWServiceException, MyException {
 		try {
-			clienteService.actualizarCliente(1152454724, "Cliente prueba edicion", "correo@editado.com");
+			clienteService.actualizarCliente(1, "Cliente prueba edicion", "correo@editado.com");
 		} catch (IWDaoException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
@@ -65,7 +74,7 @@ public class ClienteServiceTest {
 		Cliente cliente = null;
 		try {
 			clienteService = new ClienteService();
-			cliente= clienteService.obtener("correo@prueba.com");
+			cliente= clienteService.obtener("sanromero@gmail.com");
 			System.out.println("Cliente: " + cliente.getNombre());
 			assertNotNull(cliente);
 			
@@ -79,7 +88,7 @@ public class ClienteServiceTest {
 		Cliente cliente = null;
 		try {
 			clienteService = new ClienteService();
-			cliente= clienteService.obtener(1152454724);
+			cliente= clienteService.obtener(1);
 			System.out.println("Cliente: " + cliente.getNombre());
 			assertNotNull(cliente);
 			
