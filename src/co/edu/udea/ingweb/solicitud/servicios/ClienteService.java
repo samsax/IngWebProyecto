@@ -22,13 +22,9 @@ public class ClienteService {
 	
 	private ClienteDao clienteDao;
 	
-<<<<<<< HEAD
 	public void guardaCliente(int cedula, String nombres, 
 			String correoElectronico) throws IWDaoException, IWServiceException{
-=======
-	public void guardaCliente(int cedula, String nombres, String apellidos, 
-			String correoElectronico, String usuarioCrea) throws IWDaoException, IWServiceException, MyException{
->>>>>>> 3e53142149ee15f39e78a1b106e22a040371a60c
+
 		
 		Cliente cliente = null;
 		
