@@ -47,7 +47,6 @@
 	
 	<bean id="empleadoDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.EmpleadoDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
-	    <property name="empeladoDAO" ref="empleadoDao"></property>
 	</bean>
 	
 	<bean id="evaluacionDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.EvaluacionDAOHibernate">
@@ -56,13 +55,11 @@
 	
 	<bean id="respuestaDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.RespuestaDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
-	    <property name="solicitudDAO" ref="solicitudDao"></property>
-	    <property name="evaluacionDAO" ref="evaluacionDao"></property>
+	  
 	</bean>
 	
 	<bean id="solicitudDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.SolicitudDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
-	    <property name="clienteDAO" ref="clienteDao"></property>
-	    <property name="empeladoDAO" ref="empleadoDao"></property>
+	   
 	</bean>
 </beans>

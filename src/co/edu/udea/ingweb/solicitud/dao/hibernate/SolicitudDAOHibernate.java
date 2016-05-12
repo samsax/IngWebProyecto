@@ -8,15 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.sun.media.sound.EmergencySoundbank;
-
-import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
-import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
-import co.edu.udea.ingweb.solicitud.dao.EvaluacionDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
-import co.edu.udea.ingweb.solicitud.dto.Cliente;
-import co.edu.udea.ingweb.solicitud.dto.Empleado;
-import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
 import co.edu.udea.ingweb.util.exception.MyException;
 

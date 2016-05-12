@@ -2,6 +2,8 @@ package co.edu.udea.ingweb.solicitud.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.util.exception.MyException;
 

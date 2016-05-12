@@ -3,6 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/asm-3.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/SA/workspace/Lab04ClaseServletJSP/WebContent/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar"/>

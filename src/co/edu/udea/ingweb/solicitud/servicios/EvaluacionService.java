@@ -2,6 +2,8 @@ package co.edu.udea.ingweb.solicitud.servicios;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import co.edu.udea.ingweb.solicitud.dao.EvaluacionDao;
 import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
@@ -10,7 +12,7 @@ import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
 
 public class EvaluacionService {
-	
+	@Autowired
 	private EvaluacionDao evaluacionDao;
 		
 	public void guardaEvaluacion(int idEvaluacion, String tiempo, 
