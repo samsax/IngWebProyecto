@@ -71,7 +71,6 @@ public class EmpleadoServiceTest {
 	public void testObtenerInt() throws IWDaoException, IWServiceException {
 		Empleado empleado = null;
 		try {
-			empleadoServicio = new EmpleadoService();
 			empleado= empleadoServicio.obtener(2);
 			System.out.println("Cliente: " + empleado.getNombre());
 			assertNotNull(empleado);

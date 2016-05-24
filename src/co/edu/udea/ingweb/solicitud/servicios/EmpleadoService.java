@@ -1,9 +1,6 @@
 package co.edu.udea.ingweb.solicitud.servicios;
 
 import java.util.List;
-
-import org.springframework.transaction.annotation.Transactional;
-
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
@@ -11,13 +8,24 @@ import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
 
-
-
-@Transactional
+/**
+ * @author Equipo 5
+ */
 public class EmpleadoService {
 
-private EmpleadoDao empleadoDao;
-	
+	private EmpleadoDao empleadoDao;
+	/**
+	 * Guarda un empleado
+	 * 
+	 * @param identificacion
+	 * @param nombres
+	 * @param correoElectronico
+	 * @param cargo
+	 * @param contrasena
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public void guardaEmpleado(int identificacion, String nombres, 
 			String correoElectronico, String cargo, String contrasena) 
 					throws IWDaoException, IWServiceException, MyException{
@@ -52,6 +60,19 @@ private EmpleadoDao empleadoDao;
 		
 	}
 	
+	/**
+	 * Acualiza los datos de un empleado
+	 * Se le envían todos los parámetros correspondientes
+	 * a un nuevo empleado
+	 * 
+	 * @param identificacion
+	 * @param nombres
+	 * @param correoElectronico
+	 * @param cargo
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public void actualizarEmpleado(int identificacion, String nombres, 
 			String correoElectronico, String cargo) 
 					throws IWDaoException, IWServiceException, MyException{
@@ -85,7 +106,15 @@ private EmpleadoDao empleadoDao;
 		empleadoDao.modificarEmpleado(empleado);
 		
 	}
-	
+	/**
+	 * Elimina un empleado dada su identificación 
+	 * y notifica en caso de que sea una identificación no válida
+	 * 
+	 * @param cedula
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public void eliminarEmpleado(int cedula) throws IWDaoException, IWServiceException, MyException{
 		
 		Empleado empleado = null;
@@ -103,11 +132,27 @@ private EmpleadoDao empleadoDao;
 		empleadoDao.eliminarEmpleado(empleado);
 		
 	}
-	
+	/**
+	 * Retorna todos los empleados existentes en la base de datos como una lista
+	 * 
+	 * @return
+	 * @throws IWDaoException
+	 * @throws MyException
+	 */
 	public List<Empleado> obtener() throws IWDaoException, MyException{
 		return empleadoDao.listarEmpleados();
 	}
 	
+	/**
+	 * Retorna un único empleado dada su cédula / identificación
+	 * y notifica si se ingresa una cédula no válida
+	 *  
+	 * @param cedula
+	 * @return
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public Empleado obtener(int cedula) throws IWDaoException, IWServiceException, MyException{
 		if(cedula == -1 && "".equals(cedula)){
 			throw new IWServiceException("La cï¿½dula del empleado a buscar no puede ser nula, ni una cadena de caracteres vacia");

@@ -1,15 +1,19 @@
 package co.edu.udea.ingweb.solicitud.servicios;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import co.edu.udea.ingweb.solicitud.dao.EvaluacionDao;
 import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
+
+/**
+ * Lógica del negocio para las operaciones correspondientes a
+ * las evaluaciones
+ * @author Equipo 5
+ */
 
 public class EvaluacionService {
 	@Autowired

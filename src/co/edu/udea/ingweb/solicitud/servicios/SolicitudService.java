@@ -2,12 +2,8 @@ package co.edu.udea.ingweb.solicitud.servicios;
 
 import java.util.Date;
 import java.util.List;
-
-import org.springframework.transaction.annotation.Transactional;
-
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
-import co.edu.udea.ingweb.solicitud.dao.hibernate.EmpleadoDAOHibernate;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
@@ -16,7 +12,10 @@ import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
 
-@Transactional
+/**
+ * @author Equipo5
+ */
+
 public class SolicitudService {
 	
 	private SolicitudDao solicitudDao;

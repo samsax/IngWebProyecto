@@ -73,7 +73,6 @@ public class ClienteServiceTest {
 	public void testObtenerString() throws IWDaoException, IWServiceException {
 		Cliente cliente = null;
 		try {
-			clienteService = new ClienteService();
 			cliente= clienteService.obtener("sanromero@gmail.com");
 			System.out.println("Cliente: " + cliente.getNombre());
 			assertNotNull(cliente);
@@ -83,11 +82,11 @@ public class ClienteServiceTest {
 			fail(e.getMessage());
 		}
 	}
+	
 	@Test
 	public void testObtenerInt() throws IWDaoException, IWServiceException {
 		Cliente cliente = null;
 		try {
-			clienteService = new ClienteService();
 			cliente= clienteService.obtener(2);
 			System.out.println("Cliente: " + cliente.getNombre());
 			assertNotNull(cliente);

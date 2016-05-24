@@ -1,11 +1,8 @@
 package co.edu.udea.ingweb.solicitud.servicios;
 
-import java.util.Date;
+
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
@@ -13,16 +10,23 @@ import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
 /**
- * La anotación es para permitir que se hagan transacciones de manera adecuada
- * Como que haga rollback cuando falle alguna operación durante la misma
- * @author santiago.romero
+ * @author Equipo 5
  */
 
-@Transactional
 public class ClienteService {
 	@Autowired
 	private ClienteDao clienteDao;
 
+	/**
+	 * Servicio paraguardarclientes
+	 * 
+	 * @param cedula
+	 * @param nombres
+	 * @param correoElectronico
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public void guardaCliente(int cedula, String nombres, 
 		String correoElectronico) throws IWDaoException, IWServiceException, MyException{
 
@@ -55,6 +59,16 @@ public class ClienteService {
 		
 	}
 	
+	/**
+	 * Servicioara actualizar un cliente
+	 * 
+	 * @param cedula
+	 * @param nombres
+	 * @param correoElectronico
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public void actualizarCliente(int cedula, String nombres,
 			String correoElectronico) throws IWDaoException, IWServiceException, MyException{
 		
@@ -88,6 +102,14 @@ public class ClienteService {
 		
 	}
 	
+	/**
+	 * Servicio para eliinar un cliente 
+	 * 
+	 * @param cedula
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public void eliminarCliente(int cedula) throws IWDaoException, IWServiceException, MyException{
 		
 		Cliente cliente = null;
@@ -104,10 +126,26 @@ public class ClienteService {
 		clienteDao.eliminarCliente(cliente);
 	}
 	
+	/**
+	 * Serivici para obtener una lista cn tdos los clientes
+	 * 
+	 * @return
+	 * @throws IWDaoException
+	 * @throws MyException
+	 */
 	public List<Cliente> obtener() throws IWDaoException, MyException{
 		return clienteDao.listarClientes();
 	}
 	
+	/**
+	 * Servicio para obtener un cliente por su correo
+	 * 
+	 * @param correo
+	 * @return
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public Cliente obtener(String correo) throws IWDaoException, IWServiceException, MyException{
 		if(correo == null && "".equals(correo)){
 			throw new IWServiceException("El correo del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
@@ -116,6 +154,15 @@ public class ClienteService {
 		return clienteDao.obtenerCliente(correo);
 	}
 
+	/**
+	 * Servicio para obtener un cliente por su numero de identificaci�n
+	 * 
+	 * @param identificacion
+	 * @return
+	 * @throws IWDaoException
+	 * @throws IWServiceException
+	 * @throws MyException
+	 */
 	public Cliente obtener(int identificacion) throws IWDaoException, IWServiceException, MyException{
 		if(identificacion == -1 && "".equals(identificacion)){
 			throw new IWServiceException("La cedula del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
@@ -123,6 +170,7 @@ public class ClienteService {
 		
 		return clienteDao.obtenerCliente(identificacion);
 	}
+	
 	public ClienteDao getClienteDAO() {
 		return clienteDao;
 	}
