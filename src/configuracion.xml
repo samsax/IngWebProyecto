@@ -80,4 +80,8 @@
 	    <property name="solicitudDAO" ref="solicitudDao"></property>
 	    <property name="empleadoDao" ref="empleadoDao"></property>
 	    </bean>
+	    
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+	    
+	<context:component-scan base-package="co.edu.udea.solicitud.servicios"/>    
 </beans>

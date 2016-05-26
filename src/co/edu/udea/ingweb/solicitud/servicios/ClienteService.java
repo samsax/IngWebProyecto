@@ -2,7 +2,10 @@ package co.edu.udea.ingweb.solicitud.servicios;
 
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
@@ -12,7 +15,6 @@ import co.edu.udea.ingweb.util.exception.Validaciones;
 /**
  * @author Equipo 5
  */
-
 public class ClienteService {
 	@Autowired
 	private ClienteDao clienteDao;

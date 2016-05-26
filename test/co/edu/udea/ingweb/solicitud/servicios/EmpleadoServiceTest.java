@@ -27,7 +27,7 @@ public class EmpleadoServiceTest {
 	@Test
 	public void testGuardaEmpleado() throws IWServiceException, MyException {
 		try{
-			empleadoServicio.guardaEmpleado(1, "Empleado Prueba", "correo@prueba.com", "empleado", "123456");
+			empleadoServicio.guardaEmpleado(1, "Empleado Prueba", "correo@prueba.com", "empleado", "123456", 0);
 		}catch(IWDaoException e){
 			e.printStackTrace();
 			fail(e.getMessage());

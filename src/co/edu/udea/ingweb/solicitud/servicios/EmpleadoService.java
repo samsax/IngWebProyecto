@@ -1,6 +1,9 @@
 package co.edu.udea.ingweb.solicitud.servicios;
 
 import java.util.List;
+
+
+
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
@@ -22,12 +25,13 @@ public class EmpleadoService {
 	 * @param correoElectronico
 	 * @param cargo
 	 * @param contrasena
+	 * @param idjefe
 	 * @throws IWDaoException
 	 * @throws IWServiceException
 	 * @throws MyException
 	 */
 	public void guardaEmpleado(int identificacion, String nombres, 
-			String correoElectronico, String cargo, String contrasena) 
+			String correoElectronico, String cargo, String contrasena, int idjefe) 
 					throws IWDaoException, IWServiceException, MyException{
 		
 		Empleado empleado = null;
@@ -47,15 +51,17 @@ public class EmpleadoService {
 		if(Validaciones.isTextoVacio(contrasena)){
 			throw new IWServiceException("La contraseña del empleado no puede ser nula, ni una cadena de caracteres vacia");
 		}
-		
+		if(Validaciones.isTextoVacio(contrasena)){
+			throw new IWServiceException("La contraseña del empleado no puede ser nula, ni una cadena de caracteres vacia");
+		}
 		empleado = new Empleado();
-		
+		Empleado jefe = empleadoDao.obtenerEmpleado(idjefe);
 		empleado.setIdentificacion(identificacion);
 		empleado.setCargo(cargo);
 		empleado.setContrasena(contrasena);
 		empleado.setNombre(nombres);
 		empleado.setCorreo(correoElectronico);
-		
+		empleado.setJefe(jefe);
 		empleadoDao.crearEmpleado(empleado);
 		
 	}
@@ -167,5 +173,12 @@ public class EmpleadoService {
 
 	public void setEmpleadoDAO(EmpleadoDao empleadoDAO) {
 		this.empleadoDao = empleadoDAO;
+	}
+	
+	public void actualizarJefe(int idEmpleado, int idJefe) throws MyException{
+		Empleado empleado = empleadoDao.obtenerEmpleado(idEmpleado);
+		Empleado jefe = empleadoDao.obtenerEmpleado(idEmpleado);
+		empleado.setJefe(jefe);
+		empleadoDao.modificarEmpleado(empleado);
 	}
 }

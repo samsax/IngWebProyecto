@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
@@ -19,6 +19,7 @@ public class SolicitudDAOHibernate extends HibernateDaoSupport implements Solici
 {
 	private EmpleadoDao empleadoDao;
 	private ClienteDao clienteDao;
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Solicitud> listarSolicitudes() throws MyException {
 	List<Solicitud> solicitudes = new ArrayList<Solicitud>();
