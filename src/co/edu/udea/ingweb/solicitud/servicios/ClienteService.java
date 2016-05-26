@@ -13,9 +13,12 @@ import co.edu.udea.ingweb.util.exception.IWServiceException;
 import co.edu.udea.ingweb.util.exception.MyException;
 import co.edu.udea.ingweb.util.exception.Validaciones;
 /**
- * @author Equipo 5
+ * @author Samuel Arenas	- samuelsaxofon@gmail.com
+ * @author Camila Gómez		- camigomez35@gmail.com
+ * @author Santiago Romero	- bonampa312@gmail.com
  */
 public class ClienteService {
+	
 	@Autowired
 	private ClienteDao clienteDao;
 

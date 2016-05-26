@@ -18,13 +18,13 @@ public class ClienteDAOHibernate extends HibernateDaoSupport implements ClienteD
 	@Override
 	public List<Cliente> listarClientes() throws MyException {
 	List<Cliente> clientes = new ArrayList<Cliente>();
-		
+	Session session = null;
 		try{
-			Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
+			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 			
 			Criteria criteria = session.createCriteria(Cliente.class);
 			
-			clientes = criteria.list();
+			clientes =criteria.list();
 		}catch(HibernateException e){
 			throw new MyException(e);
 		}
@@ -61,7 +61,6 @@ public class ClienteDAOHibernate extends HibernateDaoSupport implements ClienteD
 	}
 	return cliente;
 	}
-	
 	
 	@Override
 	public void crearCliente(Cliente cliente) throws MyException {
