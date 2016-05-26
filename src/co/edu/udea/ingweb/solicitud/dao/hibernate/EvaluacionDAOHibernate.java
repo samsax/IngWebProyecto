@@ -7,11 +7,13 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.EvaluacionDao;
 import co.edu.udea.ingweb.solicitud.dto.Evaluacion;
 import co.edu.udea.ingweb.util.exception.MyException;
 
+@Transactional
 public class EvaluacionDAOHibernate extends HibernateDaoSupport implements EvaluacionDao {
 
 	@Override

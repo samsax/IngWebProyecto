@@ -8,11 +8,13 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.util.exception.MyException;
 
+@Transactional
 public class EmpleadoDAOHibernate extends HibernateDaoSupport implements EmpleadoDao {
 
 	@Override

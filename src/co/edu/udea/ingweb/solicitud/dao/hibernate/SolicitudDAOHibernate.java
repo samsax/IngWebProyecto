@@ -8,6 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
@@ -15,6 +16,7 @@ import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
 import co.edu.udea.ingweb.util.exception.MyException;
 
+@Transactional
 public class SolicitudDAOHibernate extends HibernateDaoSupport implements SolicitudDao
 {
 	private EmpleadoDao empleadoDao;
