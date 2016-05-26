@@ -29,13 +29,13 @@
 	            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 	            <prop key="hibernate.show_sql">true</prop>
 				<prop key="javax.persistence.validation.mode">none</prop>
-			
 	        </props>
 	    </property>
 	</bean>
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 	    <property name="dataSource" ref="dataSource"></property>
 	    <property name="sessionFactory" ref="sessionFactory"></property>
+
 	</bean>
 	<bean id="clienteDao" class="co.edu.udea.ingweb.solicitud.dao.hibernate.ClienteDAOHibernate">
 	    <property name="sessionFactory" ref="sessionFactory"></property>
@@ -54,6 +54,7 @@
 	    <property name="sessionFactory" ref="sessionFactory"></property>
 	    <property name="empleadoDao" ref ="empleadoDao"></property>	
 	    <property name="clienteDao" ref ="clienteDao"></property>	   
+	    
 	</bean>
 	<bean id="evaluacionService" class="co.edu.udea.ingweb.solicitud.servicios.EvaluacionService">
 	    <property name="evaluacionDAO" ref="evaluacionDao"></property>
