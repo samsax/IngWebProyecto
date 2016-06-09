@@ -1,0 +1,20 @@
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:46 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:47 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-05-26 12:02:47 ERROR JDBCExceptionReporter:234 - Value '0000-00-00' can not be represented as java.sql.Timestamp
+2016-06-01 22:39:59 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 10 to TIMESTAMP.
+2016-06-01 22:39:59 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 10 to TIMESTAMP.
+2016-06-01 22:39:59 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 10 to TIMESTAMP.
+2016-06-01 22:40:00 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 10 to TIMESTAMP.
+2016-06-01 22:40:00 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 6 to TIMESTAMP.
+2016-06-01 22:40:00 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 6 to TIMESTAMP.
+2016-06-01 22:40:00 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 6 to TIMESTAMP.
+2016-06-01 22:40:00 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 6 to TIMESTAMP.
+2016-06-01 22:40:00 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 6 to TIMESTAMP.
+2016-06-01 22:40:00 ERROR JDBCExceptionReporter:234 - Cannot convert value '11/05/2016' from column 6 to TIMESTAMP.

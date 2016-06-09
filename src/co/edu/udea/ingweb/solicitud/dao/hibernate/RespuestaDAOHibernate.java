@@ -35,7 +35,7 @@ public class RespuestaDAOHibernate extends HibernateDaoSupport implements Respue
 		try{
 			Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 			
-			Criteria criteria = session.createCriteria(Evaluacion.class);
+			Criteria criteria = session.createCriteria(Respuesta.class);
 			
 			respuestas = criteria.list();
 		}catch(HibernateException e){

@@ -11,6 +11,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
+import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.util.exception.MyException;
 
@@ -45,12 +46,25 @@ public class EmpleadoDAOHibernate extends HibernateDaoSupport implements Emplead
 		}catch(HibernateException e){
 			throw new MyException(e);
 			
-	}
-	
-	return empleado;
+		}
+		return empleado;
 
 	}
 
+	@Override
+	public Empleado obtenerEmpleado(String correoElectronico) throws MyException {
+		Empleado empleado = null;
+		Session session = null;
+		try{
+			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
+			Criteria criteria = session.createCriteria(Empleado.class)
+					.add(Restrictions.eq("correo", correoElectronico));
+			empleado = (Empleado) criteria.uniqueResult(); 
+		}catch(HibernateException e){
+			throw new MyException(e);	
+		}
+		return empleado;
+	};
 
 	@Override
 	public void crearEmpleado(Empleado empleado) throws MyException {
@@ -116,6 +130,7 @@ public class EmpleadoDAOHibernate extends HibernateDaoSupport implements Emplead
 				.add(Restrictions.eq("jefe", jefe));
 		empleados = criteria.list();
 		return empleados;
-	};
+	}
+
 	
 }

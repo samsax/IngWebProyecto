@@ -21,12 +21,25 @@ public class SolicitudService {
 	private SolicitudDao solicitudDao;
 	private EmpleadoDao empleadoDao;
 	
-	public void guardaSolicitud(int idCodigo, String tipo, String texto, 
-			String estado, int dificultad, Date fechaCrea, 
-			Cliente cliente, Empleado empleado) throws IWDaoException, IWServiceException, MyException{
+	public void guardaSolicitud(int idCodigo, 
+			String tipo, 
+			String texto, 
+			String estado, 
+			int dificultad, 
+			Date fechaCrea, 
+			Cliente cliente, 
+			Empleado empleado) throws IWDaoException, IWServiceException, MyException{
+
+		System.out.println(tipo);
+		System.out.println(idCodigo);
+		System.out.println(texto);
+		System.out.println(estado);
+		System.out.println(dificultad);
+		System.out.println(fechaCrea);
+		System.out.println(cliente);
+		System.out.println(empleado);
 		
 		Solicitud solicitud = null;
-		 
 		if(Validaciones.isTextoVacio(idCodigo)){
 			throw new IWServiceException("El código de la solicitud no puede ser nulo, ni una cadena de caracteres vacia");
 		}

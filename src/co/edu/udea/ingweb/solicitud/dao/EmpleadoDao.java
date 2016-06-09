@@ -25,6 +25,16 @@ public interface EmpleadoDao {
 	public Empleado obtenerEmpleado(int identificacion) throws MyException;
 	
 	/**
+	 * Firma del m�todo que nos permite obtener un �nico empleado.
+	 * 
+	 * @param correoElectronico
+	 *            con la cual se realizar� la b�squeda.
+	 * @return Retorna el empleado buscado.
+	 * @throws MyException
+	 */
+	public Empleado obtenerEmpleado(String correoElectronico) throws MyException;
+	
+	/**
 	 * Firma del m�todo que nos permite obtener un �nico empleado 
 	 * por su correo para login en el sistema.
 	 * 

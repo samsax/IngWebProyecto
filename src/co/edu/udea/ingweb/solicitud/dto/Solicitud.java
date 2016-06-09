@@ -3,7 +3,7 @@ package co.edu.udea.ingweb.solicitud.dto;
 import java.util.Date;
 
 public class Solicitud {
-	int idcodigo;
+	Integer idcodigo;
 	String tipo;
 	String texto;
 	String estado;
@@ -12,10 +12,10 @@ public class Solicitud {
 	Date fechaRespuesta;
 	Cliente cliente;
 	Empleado empleado;
-	public int getIdcodigo() {
+	public Integer getIdcodigo() {
 		return idcodigo;
 	}
-	public void setIdcodigo(int idcodigo) {
+	public void setIdcodigo(Integer idcodigo) {
 		this.idcodigo = idcodigo;
 	}
 	public String getTipo() {

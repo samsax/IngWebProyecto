@@ -154,7 +154,6 @@ public class ClienteService {
 	public Cliente obtener(String correo) throws IWDaoException, IWServiceException, MyException{
 		if(correo == null && "".equals(correo)){
 			throw new IWServiceException("El correo del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
-
 		}
 		return clienteDao.obtenerCliente(correo);
 	}

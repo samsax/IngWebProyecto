@@ -161,15 +161,34 @@ public class EmpleadoService {
 	 */
 	public Empleado obtener(int cedula) throws IWDaoException, IWServiceException, MyException{
 		if(cedula == -1 && "".equals(cedula)){
-			throw new IWServiceException("La cï¿½dula del empleado a buscar no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("La cedula del empleado a buscar no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
 		return empleadoDao.obtenerEmpleado(cedula);
 	}
 
+	 /**
+	  * Retorna un único empleado dado su correo
+	  * y notifica si se ingresa un correo no válido
+	  * @param correoElectronico
+	  * @return
+	  * @throws IWDaoException
+	  * @throws IWServiceException
+	  * @throws MyException
+	  */
+	public Empleado obtener(String correoElectronico) throws IWDaoException, IWServiceException, MyException{
+		if(correoElectronico == null && "".equals(correoElectronico)){
+			throw new IWServiceException("El correo del cliente a buscar no puede ser nula, ni una cadena de caracteres vacia");
+		}
+		return empleadoDao.obtenerEmpleado(correoElectronico);
+	}
+	
+	
+	
 	public EmpleadoDao getEmpleadoDAO() {
 		return empleadoDao;
 	}
+	
 
 	public void setEmpleadoDAO(EmpleadoDao empleadoDAO) {
 		this.empleadoDao = empleadoDAO;
