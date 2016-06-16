@@ -6,13 +6,14 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.ingweb.solicitud.dao.ClienteDao;
 import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
+import co.edu.udea.ingweb.solicitud.dto.Empleado;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
 import co.edu.udea.ingweb.util.exception.MyException;
 
@@ -38,6 +39,24 @@ public class SolicitudDAOHibernate extends HibernateDaoSupport implements Solici
 		return solicitudes;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Solicitud> listarSolicitudesPorEmpleado(String correoEmpleado) throws MyException {
+	List<Solicitud> solicitudes = new ArrayList<Solicitud>();
+		
+		try{
+			Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
+			Empleado empleado = empleadoDao.obtenerEmpleado(correoEmpleado);
+			Criteria criteria = session.createCriteria(Solicitud.class)
+					.add(Restrictions.eq("empleado.identificacion", empleado.getIdentificacion()));
+			
+			solicitudes = criteria.list();
+		}catch(HibernateException e){
+			throw new MyException(e);
+		}
+		return solicitudes;
+	}
+	
 	@Override
 	public Solicitud obtenerSolicitud(int identificacion) throws MyException{
 		Solicitud solicitud = null;

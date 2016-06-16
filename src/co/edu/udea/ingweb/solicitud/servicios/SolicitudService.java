@@ -6,6 +6,7 @@ import co.edu.udea.ingweb.solicitud.dao.EmpleadoDao;
 import co.edu.udea.ingweb.solicitud.dao.SolicitudDao;
 import co.edu.udea.ingweb.solicitud.dto.Cliente;
 import co.edu.udea.ingweb.solicitud.dto.Empleado;
+import co.edu.udea.ingweb.solicitud.dto.Respuesta;
 import co.edu.udea.ingweb.solicitud.dto.Solicitud;
 import co.edu.udea.ingweb.util.exception.IWDaoException;
 import co.edu.udea.ingweb.util.exception.IWServiceException;
@@ -21,6 +22,16 @@ public class SolicitudService {
 	private SolicitudDao solicitudDao;
 	private EmpleadoDao empleadoDao;
 	
+	
+	public void responder(Solicitud solicitud, String respuesta) throws MyException{
+		solicitud.setRespuesta(respuesta);
+		try {
+			solicitudDao.modificarSolicitud(solicitud);
+		} catch (MyException e) {
+			throw new MyException("Error al crear la solicitud");
+		}
+	}
+	
 	public void guardaSolicitud(int idCodigo, 
 			String tipo, 
 			String texto, 
@@ -28,16 +39,8 @@ public class SolicitudService {
 			int dificultad, 
 			Date fechaCrea, 
 			Cliente cliente, 
-			Empleado empleado) throws IWDaoException, IWServiceException, MyException{
-
-		System.out.println(tipo);
-		System.out.println(idCodigo);
-		System.out.println(texto);
-		System.out.println(estado);
-		System.out.println(dificultad);
-		System.out.println(fechaCrea);
-		System.out.println(cliente);
-		System.out.println(empleado);
+			Empleado empleado,
+			String respuesta) throws IWDaoException, IWServiceException, MyException{
 		
 		Solicitud solicitud = null;
 		if(Validaciones.isTextoVacio(idCodigo)){
@@ -60,6 +63,7 @@ public class SolicitudService {
 		solicitud.setFechaCreacion(fechaCrea);
 		solicitud.setCliente(cliente);
 		solicitud.setEmpleado(empleado);
+		solicitud.setRespuesta(respuesta);
 		
 		try {
 			solicitudDao.crearSolicitud(solicitud);
@@ -129,6 +133,10 @@ public class SolicitudService {
 	
 	public List<Solicitud> obtener() throws IWDaoException, MyException{
 		return solicitudDao.listarSolicitudes();
+	}
+	
+	public List<Solicitud> obtenerPorEmpleado(String correoEmpleado) throws IWDaoException, MyException{
+		return solicitudDao.listarSolicitudesPorEmpleado(correoEmpleado);
 	}
 	
 	public Solicitud obtener(int idCodigo) throws IWDaoException, IWServiceException, MyException{

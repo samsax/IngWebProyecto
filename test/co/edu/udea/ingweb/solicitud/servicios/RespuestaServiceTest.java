@@ -32,7 +32,7 @@ public class RespuestaServiceTest {
 		try{
 			Solicitud solicitud = new Solicitud(); 
 			Evaluacion evaluacion = new Evaluacion();
-			respuestaService.guardaRespuesta(2, "Prueba Respuesta 2", solicitud, evaluacion);	
+			respuestaService.guardaRespuesta(2, "Prueba Respuesta 2", solicitud);	
 		}catch(IWDaoException e){
 			e.printStackTrace();
 			fail(e.getMessage());

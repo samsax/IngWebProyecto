@@ -15,6 +15,14 @@ public interface SolicitudDao {
 	public List<Solicitud> listarSolicitudes() throws MyException;
 
 	/**
+	 * Firma del método que nos permite obtener las solicitudes de un empleado.
+	 * 
+	 * @return Lista con las solicitudes.
+	 * @throws MyException
+	 */
+	public List<Solicitud> listarSolicitudesPorEmpleado(String correoEmpleado) throws MyException;
+	
+	/**
 	 * Firma del método que nos permite obtener una unica solicitud.
 	 * 
 	 * @param idcodigo

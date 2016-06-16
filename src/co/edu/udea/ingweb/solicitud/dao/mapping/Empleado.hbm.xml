@@ -3,25 +3,26 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 8/05/2016 09:34:09 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="co.edu.udea.ingweb.solicitud.dto.Empleado" table="EMPLEADO">
-        <id name="identificacion" type="int">
-            <column name="IDENTIFICACION" />
-            <generator class="assigned" />
-        </id>
-        <property name="nombre" type="java.lang.String">
-            <column name="NOMBRE" />
-        </property>
-        <property name="correo" type="java.lang.String">
-            <column name="CORREO" />
-        </property>
-        <property name="cargo" type="java.lang.String">
-            <column name="CARGO" />
-        </property>
-        <property name="contrasena" type="java.lang.String">
-            <column name="CONTRASENA" />
-        </property>
-         <many-to-one name="jefe" class="co.edu.udea.ingweb.solicitud.dto.Empleado"
-            column="JEFE_IDENTIFICACION" unique="true" not-null="true"
-            cascade="all" />
-    </class>
+	<class name="co.edu.udea.ingweb.solicitud.dto.Empleado" table="EMPLEADO">
+		<id name="identificacion" type="int">
+			<column name="IDENTIFICACION" />
+			<generator class="assigned" />
+		</id>
+		<property name="nombre" type="java.lang.String">
+			<column name="NOMBRE" />
+		</property>
+		<property name="correo" type="java.lang.String">
+			<column name="CORREO" />
+		</property>
+		<property name="cargo" type="java.lang.String">
+			<column name="CARGO" />
+		</property>
+		<property name="contrasena" type="java.lang.String">
+			<column name="CONTRASENA" />
+		</property>
+		<many-to-one name="jefe"
+			class="co.edu.udea.ingweb.solicitud.dto.Empleado" fetch="select"
+			lazy="false" column="JEFE_IDENTIFICACION" unique="true" not-null="true"
+			cascade="all" />
+	</class>
 </hibernate-mapping>

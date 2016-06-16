@@ -12,6 +12,15 @@ public class Solicitud {
 	Date fechaRespuesta;
 	Cliente cliente;
 	Empleado empleado;
+	String respuesta;
+	
+	
+	public String getRespuesta() {
+		return respuesta;
+	}
+	public void setRespuesta(String respuesta) {
+		this.respuesta = respuesta;
+	}
 	public Integer getIdcodigo() {
 		return idcodigo;
 	}
@@ -62,6 +71,11 @@ public class Solicitud {
 	}
 	public Empleado getEmpleado() {
 		return empleado;
+	}
+	public Empleado getEmpleadoSinJefe(){
+		Empleado emp = this.empleado;
+		emp.setJefe(null);
+		return emp;
 	}
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;

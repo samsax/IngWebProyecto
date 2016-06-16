@@ -25,24 +25,7 @@ import co.edu.udea.ingweb.util.exception.MyException;
 public class SolicitudServiceTest {
 	@Autowired
 	SolicitudService solicitudService;
-	@Test
-	public void testGuardaSolicitud() {
-		try{
-			Cliente cliente = new Cliente();
-		Empleado empleado = new Empleado();
-		Date date = new Date();
-		solicitudService.guardaSolicitud(3, "Queja", "Queja prueba", "activa", 2, date, cliente, empleado);
-		}catch(IWDaoException e){
-			e.printStackTrace();
-			fail(e.getMessage());
-		}catch(IWServiceException e){
-			e.printStackTrace();
-			fail(e.getMessage());
-		}catch(MyException e){
-			e.printStackTrace();
-			fail(e.getMessage());
-		}
-	}
+	
 
 	@Test
 	public void testActualizarSolicitud() {
@@ -84,6 +67,21 @@ public class SolicitudServiceTest {
 		List<Solicitud> solicitudes= null;
 		try {
 			solicitudes = solicitudService.obtener();
+			assertTrue(solicitudes.size() >0);
+		} catch(IWDaoException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}catch(MyException e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testObtenerPorEmpleado() {
+		List<Solicitud> solicitudes= null;
+		try {
+			solicitudes = solicitudService.obtenerPorEmpleado("e.gomez@gmail.com");
 			assertTrue(solicitudes.size() >0);
 		} catch(IWDaoException e){
 			e.printStackTrace();

@@ -26,11 +26,14 @@
         <property name="fechaRespuesta" type="java.util.Date">
             <column name="FECHARESPUESTA" />
         </property>
-        <many-to-one name="cliente" class="co.edu.udea.ingweb.solicitud.dto.Cliente" fetch="select" lazy="false">
+        <many-to-one name="cliente" class="co.edu.udea.ingweb.solicitud.dto.Cliente" lazy="false">
             <column name="CLIENTE_IDENTIFICACION" />
         </many-to-one>
-        <many-to-one name="empleado" class="co.edu.udea.ingweb.solicitud.dto.Empleado" fetch="select" lazy="false">
+        <many-to-one name="empleado" class="co.edu.udea.ingweb.solicitud.dto.Empleado" lazy="false">
             <column name="EMPLEADO_IDENTIFICACION" />
         </many-to-one>
+        <property name="respuesta" type="java.lang.String">
+            <column name="Respuesta" />
+        </property>
     </class>
 </hibernate-mapping>

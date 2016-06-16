@@ -19,16 +19,16 @@ public class RespuestaService {
 	private RespuestaDao respuestaDAO;
 	
 	public void guardaRespuesta(int idRespuesta, String texto, 
-			Solicitud solicitud, Evaluacion evaluacion) 
+			Solicitud solicitud) 
 					throws IWDaoException, IWServiceException, MyException{
 		
 		Respuesta respuesta= null;
 		
 		if(Validaciones.isTextoVacio(idRespuesta)){
-			throw new IWServiceException("La identificaciÃ³n de la evaluaciÃ³n no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("La identificación de la evaluación no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(texto)){
-			throw new IWServiceException("El tiempo de evaluaciÃ³n no puede ser nulo, ni una cadena de caracteres vacia");
+			throw new IWServiceException("El tiempo de evaluación no puede ser nulo, ni una cadena de caracteres vacia");
 		}
 		
 		respuesta = new Respuesta();
@@ -36,7 +36,6 @@ public class RespuestaService {
 		respuesta.setIdRespuesta(idRespuesta);
 		respuesta.setTexto(texto);
 		respuesta.setCodigo(solicitud);
-		respuesta.setEvaluacion(evaluacion);
 		respuestaDAO.crearRespuesta(respuesta);;
 		
 	}

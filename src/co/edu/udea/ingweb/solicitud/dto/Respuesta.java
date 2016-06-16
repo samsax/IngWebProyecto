@@ -6,6 +6,8 @@ public class Respuesta {
 	Solicitud codigo;
 	Evaluacion evaluacion;
 	
+	
+	
 	public int getIdRespuesta() {
 		return idRespuesta;
 	}
